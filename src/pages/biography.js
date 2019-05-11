@@ -1,9 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import s from "./biography.module.css"
 import Layout from "../components/layout"
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-
 
 export default ({ data }) => {
   const content = data.allContentfulBiography.edges[0].node.bodytext.json
@@ -18,17 +17,6 @@ export default ({ data }) => {
 
 }
 
-// export const query = graphql`
-//   query {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//   }
-// `
-
-
 export const query = graphql`
   query {
     site {
@@ -40,7 +28,6 @@ export const query = graphql`
       edges {
         node {
           id
-          slug
           bodytext {
             id
             json
@@ -50,4 +37,3 @@ export const query = graphql`
     }
   }
 `
-
