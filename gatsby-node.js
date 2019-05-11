@@ -28,6 +28,10 @@ exports.createPages = ({ graphql, actions }) => {
       }
     }
   `).then(result => {
+    if (result.errors) {
+      console.log("Error retrieving contentful data", result.errors);
+    }
+
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
         path: node.fields.slug,
@@ -39,5 +43,7 @@ exports.createPages = ({ graphql, actions }) => {
         },
       })
     })
-  })
+  }).catch(error => {
+    console.log("Error retrieving contentful data", error);
+  });
 }

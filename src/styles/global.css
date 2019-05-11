@@ -1,4 +1,9 @@
 html {
   background-color: yellow;
-  color:blue;
+  color:red;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: red;
 }

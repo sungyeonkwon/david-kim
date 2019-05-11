@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
+import s from "./layout.module.css"
 
 
 const ListLink = props => (
@@ -21,14 +22,14 @@ export default ({ children }) => {
     `
   )
   return(
-    <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
-    <header style={{ marginBottom: `1.5rem` }}>
-      <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
-        <h3 style={{ display: `inline` }}>
+    <div className={s.container}>
+    <header className={s.header}>
+      <Link to="/">
+        <h3 className={s.logo}>
           {data.site.siteMetadata.title} 
         </h3>
       </Link>
-      <ul style={{ listStyle: `none`, float: `right` }}>
+      <ul className={s.ul}>
         <ListLink to="/">Home</ListLink>
         <ListLink to="/biography/">Biography</ListLink>
         <ListLink to="/concerts/">Concerts</ListLink>
@@ -43,7 +44,7 @@ export default ({ children }) => {
   }
 
 
-//   Home: Text
+// Home: Text
 // Biography: Text
 // Concerts: Text
 // Media: Audio / Videos

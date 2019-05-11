@@ -1,0 +1,17 @@
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  display: inline-block;
+}
+
+.ul {
+  list-style: none;
+  float: right;
+}
