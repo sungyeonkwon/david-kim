@@ -1,12 +1,11 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 
 export default () => (
   <Layout>
-    <h1>home</h1>
+    <h1>Gallert</h1>
     <p>
-      <a href="mailto:me@example.com">me@example.com</a>
+      images etc
     </p>
   </Layout>
 )
