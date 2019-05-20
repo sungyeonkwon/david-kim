@@ -31,8 +31,9 @@ class Contact extends Component {
     return (
       <Layout>
         <form 
-          name="contact"
+          name="contact-form"
           method="POST"
+          action="/pages/success"
           data-netlify="true" 
           data-netlify-honeypot="bot-field"
         >
@@ -46,9 +47,13 @@ class Contact extends Component {
               placeholder="Name" />
 
           </label>
-          <textarea
-            name="message"
-          ></textarea>
+          <label> 
+            Message
+            <textarea
+              name="message"
+            ></textarea>
+          </label>
+
           <button type="submit">Submit</button>
         </form>
         <div>{documentToReactComponents(this.state.content)}</div>
