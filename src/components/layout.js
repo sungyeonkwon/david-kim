@@ -30,11 +30,11 @@ export default ({ children }) => {
         </h3>
       </Link>
       <ul className={s.ul}>
-        <ListLink to="/">Home</ListLink>
         <ListLink to="/biography/">Biography</ListLink>
-        <ListLink to="/concerts/">Concerts</ListLink>
+        <ListLink to="/schedule/">Schedule</ListLink>
         <ListLink to="/media/">Media</ListLink>
         <ListLink to="/gallery/">Gallery</ListLink>
+        <ListLink to="/research/">Research</ListLink>
         <ListLink to="/contact/">Contact</ListLink>
       </ul>
     </header>

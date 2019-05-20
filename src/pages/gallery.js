@@ -18,16 +18,20 @@ class Gallery extends Component {
       <div
         onClick={(e) => this.onEmptySpaceClick(e.target)} 
         className={s.slideshow}>
-      <span
-        onClick={(e) => this.onArrowClick('prev')} 
-        className={s.prev} />
-        <img 
-          className={s.slide} 
-          src={this.state.selectedImg} 
+        <div className={s.inner}>
+        <span
+          onClick={(e) => this.onArrowClick('prev')} 
+          className={s.prev} 
         />
-      <span 
-        onClick={(e) => this.onArrowClick('next')} 
-        className={s.next} />
+          <img 
+            className={s.slide} 
+            src={this.state.selectedImg} 
+          />
+        <span 
+          onClick={(e) => this.onArrowClick('next')} 
+          className={s.next} 
+        />
+        </div>
       </div>
     )
   }
