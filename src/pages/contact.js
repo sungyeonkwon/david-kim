@@ -22,10 +22,10 @@ class Contact extends Component {
     })
   }
 
-  handleSubmit = e => {
-    // e.preventDefault()
-    console.log(`hewwwwllo ${this.state.name}`)
-  }
+  // handleSubmit = e => {
+  //   // e.preventDefault()
+  //   console.log(`hewwwwllo ${this.state.name}`)
+  // }
 
   render() {
     return (
@@ -33,8 +33,8 @@ class Contact extends Component {
         <form 
           name="contact"
           method="POST"
-          // onSubmit={this.handleSubmit}
           data-netlify="true" 
+          data-netlify-honeypot="bot-field"
         >
           <label>
             Name
