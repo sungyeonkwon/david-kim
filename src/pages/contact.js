@@ -23,7 +23,7 @@ class Contact extends Component {
   }
 
   handleSubmit = e => {
-    e.preventDefault()
+    // e.preventDefault()
     console.log(`hewwwwllo ${this.state.name}`)
   }
 
@@ -34,7 +34,8 @@ class Contact extends Component {
           name="contact"
           method="POST"
           onSubmit={this.handleSubmit}
-          data-netlify="true" >
+          data-netlify="true" 
+        >
           <label>
             Name
             <input 
