@@ -33,7 +33,7 @@ class Contact extends Component {
         <form 
           name="contact"
           method="POST"
-          onSubmit={this.handleSubmit}
+          // onSubmit={this.handleSubmit}
           data-netlify="true" 
         >
           <label>
@@ -46,7 +46,9 @@ class Contact extends Component {
               placeholder="Name" />
 
           </label>
-          <textarea></textarea>
+          <textarea
+            name="message"
+          ></textarea>
           <button type="submit">Submit</button>
         </form>
         <div>{documentToReactComponents(this.state.content)}</div>
