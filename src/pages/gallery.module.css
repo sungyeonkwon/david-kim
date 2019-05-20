@@ -3,7 +3,6 @@
   grid-template-columns: 30% 30% 30%;
   grid-gap: 50px;
   justify-content: space-between;
-  border: 1px solid red;
   justify-items: center;
   align-items: center;
 }

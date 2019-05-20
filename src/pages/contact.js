@@ -4,12 +4,15 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { css } from 'linaria';
 import Layout from "../components/layout"
 
-
+const block = css`
+  display: block;
+`
 
 const input = css`
   background-color: red;
   border: none;
-  margin-left: 20px;
+  margin: 20px;
+  padding: 10px 15px;
   background-color: rgba(255,255,255,0.3);
 `
 
@@ -58,8 +61,8 @@ class Contact extends Component {
               required
             />
           </label>
-          <label> 
-            Message
+          <label className={block}> 
+            {/* <span className={block}>Message</span> */}
             <textarea
               name="message"
               className={textarea}

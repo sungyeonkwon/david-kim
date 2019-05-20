@@ -1,6 +1,7 @@
 .container {
   margin: 0 auto;
   max-width: 1200px;
+  padding: 0 15px;
 }
 
 .header {
@@ -16,8 +17,8 @@
   float: right;
 }
 
-
-@media only screen and (max-width: 1200px) {
+/* 
+@media only screen and (max-width: 1185px) {
 
   .container {
     margin: 0 auto;
@@ -25,4 +26,4 @@
   }
   
   
-}
+} */

@@ -14,6 +14,10 @@ a:hover {
   color: rgba(255,255,255,.3)
 }
 
+*:focus {
+  outline: none;
+}
+
 /** HOME **/
 .background-container {
   position: fixed; 
