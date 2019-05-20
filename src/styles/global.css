@@ -1,16 +1,17 @@
 html {
-  background-color: white;
-  color:black;
+  background-color: darkgreen;
+  color:white;
   overflow-y: scroll;
+  line-height:1.4;
 }
 
 a, a:visited {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 a:hover {
-  color: rgba(0,0,0,.3)
+  color: rgba(255,255,255,.3)
 }
 
 /** HOME **/
@@ -32,4 +33,38 @@ a:hover {
   margin: auto; 
   min-width: 50%;
   min-height: 50%;
+}
+
+/** TYPOGRAPHY **/
+
+.type-xl{
+  font-size: 60px;
+}
+
+.type-l{
+  font-size: 40px;
+}
+
+.type-m{
+  font-size: 32px;
+}
+
+.type-s{
+  font-size: 20px;
+}
+
+.type-xs{
+  font-size: 14px;
+}
+
+.type-white {
+  color:white;
+}
+
+/** SCHEDULE **/
+.para-divider p{
+  border-top:1px solid white;
+  padding:20px 0;
+  display:block;
+  width:100%;
 }

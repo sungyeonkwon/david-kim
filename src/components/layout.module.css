@@ -15,3 +15,14 @@
   list-style: none;
   float: right;
 }
+
+
+@media only screen and (max-width: 1200px) {
+
+  .container {
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  
+}

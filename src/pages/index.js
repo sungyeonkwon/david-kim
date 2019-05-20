@@ -13,7 +13,7 @@ export default ({ data }) => {
       <div className="background-container">
         <img src = {backgroundImage} />
       </div>
-      <p>
+      <p className="type-white type-xl">
         {documentToReactComponents(strapline)}
       </p>
     </Layout>

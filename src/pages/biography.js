@@ -1,17 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import s from "./biography.module.css"
 import Layout from "../components/layout"
 
-
 export default ({ data }) => {
-  const content = data.allContentfulBiography.edges[0].node.bodytext.json
-  console.log(content)
+  const intro = data.allContentfulBiography.edges[0].node.introtext.json
+  const body = data.allContentfulBiography.edges[0].node.bodytext.json
 
   return (
     <Layout>
-    <div className={s.body}>{documentToReactComponents(content)}</div>
+    <div className="type-l">{documentToReactComponents(intro)}</div>
+    <div className="type-m">{documentToReactComponents(body)}</div>
    </Layout>
   )
 
@@ -19,15 +18,14 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allContentfulBiography {
       edges {
         node {
           id
+          introtext {
+            id
+            json
+          }
           bodytext {
             id
             json

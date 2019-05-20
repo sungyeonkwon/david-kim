@@ -35,7 +35,7 @@
 }
 
 .slide {
-
+  width: 100%;
 }
 
 .prev {
@@ -50,10 +50,23 @@
   background-color:red;
 }
 
+@media only screen and (max-width: 1200px) {
+
+  .inner {
+    max-width: 90%;
+    /* max-height: 60%; */
+  }
+  
+}
+
 @media only screen and (max-width: 768px) {
   .container {
     grid-template-columns: 40% 40%;
     grid-gap: 50px;
+  }
+
+  .inner {
+    width: 100%;
   }
   
 }

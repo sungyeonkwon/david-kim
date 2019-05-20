@@ -1,35 +1,17 @@
 import React from "react"
-import { graphql } from "gatsby"
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Layout from "../components/layout"
 
-export default ({ data }) => {
-  console.log("contact data", data)
-  const content = data.allContentfulContact.edges[0].node.bodytext.json
-  return (
+export default () => {
+ return (
     <Layout>
-    <div>{documentToReactComponents(content)}</div>
-  </Layout>
+      <h1>CD Tracks for “The Brahmsian Hairpin” in 19th-Century Music, Summer 2012</h1>
+      <h3>CD Tracks</h3>
+      <div className="row">
+        <div className="number"></div>
+        <div className="title"></div>
+        <div className="link"></div>
+      </div>
+    </Layout>
   )
 }
 
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allContentfulContact {
-      edges {
-        node {
-          id
-          bodytext {
-            id
-            json
-          }
-        }
-      }
-    }
-  }
-`

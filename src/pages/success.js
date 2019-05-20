@@ -3,25 +3,29 @@ import { graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Layout from "../components/layout"
 
-
 export default ({ data }) => {
-  const content = data.allContentfulSchedule.edges[0].node.schedule.json
-
+  console.log("contact data", data)
+  const content = data.allContentfulContact.edges[0].node.bodytext.json
   return (
     <Layout>
-    <div className="type-m para-divider">{documentToReactComponents(content)}</div>
-   </Layout>
+      this is a success page
+    <div>{documentToReactComponents(content)}</div>
+  </Layout>
   )
-
 }
 
 export const query = graphql`
   query {
-    allContentfulSchedule{
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allContentfulContact {
       edges {
         node {
           id
-          schedule {
+          bodytext {
             id
             json
           }

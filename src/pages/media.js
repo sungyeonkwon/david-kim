@@ -23,7 +23,7 @@ export default ({ data }) => {
       return(
         <>
           <h1>{edge.node.title}</h1>
-          <p>{documentToReactComponents(edge.node.description.json)}</p>
+          <p className="para-divider">{documentToReactComponents(edge.node.description.json)}</p>
           {audios}
         </>
       )
