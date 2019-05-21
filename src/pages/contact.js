@@ -2,7 +2,8 @@ import React, { Component } from "react"
 import { graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { css } from 'linaria';
-import Layout from "../components/layout"
+import Layout from '../components/layout'
+import Button from '../components/button'
 
 const block = css`
   display: block;
@@ -26,13 +27,13 @@ const textarea = css`
 class Contact extends Component {
 
   state = {
-    content: this.props.data.allContentfulContact.edges[0].node.bodytext.json,
+    // content: this.props.data.allContentfulContact.edges[0].node.bodytext.json,
   }
 
   render() {
     return (
       <Layout>
-        <div>{documentToReactComponents(this.state.content)}</div>
+        {/* <div>{documentToReactComponents(this.state.content)}</div> */}
         <form 
           name="contact-form"
           method="POST"
@@ -70,7 +71,9 @@ class Contact extends Component {
             ></textarea>
           </label>
 
-          <button type="submit">Submit</button>
+          <button type="submit">
+            <Button type="submit">Submit</Button>
+          </button>
         </form>
       </Layout>
     )

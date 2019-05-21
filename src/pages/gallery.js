@@ -2,6 +2,7 @@ import React, { Component}  from "react"
 import { graphql } from "gatsby"
 import s from "./gallery.module.css"
 import Layout from "../components/layout"
+import Arrow from '../components/arrow'
 
 
 class Gallery extends Component {
@@ -19,18 +20,20 @@ class Gallery extends Component {
         onClick={(e) => this.onEmptySpaceClick(e.target)} 
         className={s.slideshow}>
         <div className={s.inner}>
-        <span
-          onClick={(e) => this.onArrowClick('prev')} 
-          className={s.prev} 
-        />
-          <img 
-            className={s.slide} 
-            src={this.state.selectedImg} 
-          />
-        <span 
-          onClick={(e) => this.onArrowClick('next')} 
-          className={s.next} 
-        />
+          <div
+            onClick={(e) => this.onArrowClick('prev')} 
+            className={s.prev} >
+              <Arrow direction="left" />
+          </div>
+            <img 
+              className={s.slide} 
+              src={this.state.selectedImg} 
+            />
+          <div
+            onClick={(e) => this.onArrowClick('next')} 
+            className={s.next} >
+              <Arrow direction="right" />
+          </div>
         </div>
       </div>
     )
@@ -56,6 +59,7 @@ class Gallery extends Component {
   }
 
   onArrowClick = direction => {
+    console.log("arrow was clicked")
     const newIndex = this.rotateIndex(this.state.selectedImgIndex, direction)
     const newImage = this.state.gallery
       .filter((img, index) => index === newIndex)
@@ -67,7 +71,8 @@ class Gallery extends Component {
   }
 
   onEmptySpaceClick = target => {
-    if (target.tagName !== 'SPAN' && target.tagName !== 'IMG'){
+    const tag = target.tagName.toLowerCase()
+    if (tag !== 'span' && tag !== 'img' && tag !== 'svg'){
       this.setState({ isSlideshow: false })
     }
   }
@@ -89,7 +94,6 @@ class Gallery extends Component {
   }
 
   render() {
-    console.log("this", this)
     return (
       <Layout>
       {this.state.isSlideshow? this.slideshow() : null }
@@ -106,11 +110,6 @@ export default Gallery
 
 export const query = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allContentfulGallery {
       edges {
         node {

@@ -4,7 +4,7 @@ import s from "./layout.module.css"
 
 
 const ListLink = props => (
-  <li style={{ display: `inline-block`, marginRight: `1rem` }}>
+  <li style={{ marginRight: `1rem` }}>
     <Link to={props.to}>{props.children}</Link>
   </li>
 )
@@ -22,23 +22,22 @@ export default ({ children }) => {
     `
   )
   return(
-    <div className={s.container}>
-    <header className={s.header}>
-      <Link to="/">
-        <h3 className={s.logo}>
-          {data.site.siteMetadata.title} 
-        </h3>
-      </Link>
-      <ul className={s.ul}>
-        <ListLink to="/biography/">Biography</ListLink>
-        <ListLink to="/schedule/">Schedule</ListLink>
-        <ListLink to="/media/">Media</ListLink>
-        <ListLink to="/gallery/">Gallery</ListLink>
-        <ListLink to="/research/">Research</ListLink>
-        <ListLink to="/contact/">Contact</ListLink>
-      </ul>
-    </header>
-    {children}
+    <div className={s.wrapper}>
+      <header className={s.header}>
+        <div className={s.background} />
+        <ul className={s.ul}>
+          <ListLink to="/">{data.site.siteMetadata.title}</ListLink><br/>
+          <ListLink to="/biography/">Biography</ListLink>
+          <ListLink to="/schedule/">Schedule</ListLink>
+          <ListLink to="/media/">Media</ListLink>
+          <ListLink to="/gallery/">Gallery</ListLink>
+          <ListLink to="/research/">Research</ListLink>
+          <ListLink to="/contact/">Contact</ListLink>
+        </ul>
+      </header>
+      <div className={s.container}>
+      {children}
+      </div>
     </div>
     )
   }
