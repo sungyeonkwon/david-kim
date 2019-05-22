@@ -3,9 +3,12 @@ import { graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { css } from 'linaria';
 import Layout from "../components/layout"
+import { RED, BLUE } from "../constants/constants"
 
+console.log("constants", RED)
 const portrait = css`
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
 `
 
 export default ({ data }) => {

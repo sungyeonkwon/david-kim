@@ -13,37 +13,37 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 }
 
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
-  return graphql(`
-    {
-      allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    }
-  `).then(result => {
-    if (result.errors) {
-      console.log("Error retrieving contentful data", result.errors);
-    }
+// exports.createPages = ({ graphql, actions }) => {
+//   const { createPage } = actions
+//   return graphql(`
+//     {
+//       allMarkdownRemark {
+//         edges {
+//           node {
+//             fields {
+//               slug
+//             }
+//           }
+//         }
+//       }
+//     }
+//   `).then(result => {
+//     if (result.errors) {
+//       console.log("Error retrieving contentful data", result.errors);
+//     }
 
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.fields.slug,
-        component: path.resolve(`./src/templates/concert-date.js`),
-        context: {
-          // Data passed to context is available
-          // in page queries as GraphQL variables.
-          slug: node.fields.slug,
-        },
-      })
-    })
-  }).catch(error => {
-    console.log("Error retrieving contentful data", error);
-  });
-}
+//     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+//       createPage({
+//         path: node.fields.slug,
+//         component: path.resolve(`./src/templates/concert-date.js`),
+//         context: {
+//           // Data passed to context is available
+//           // in page queries as GraphQL variables.
+//           slug: node.fields.slug,
+//         },
+//       })
+//     })
+//   }).catch(error => {
+//     console.log("Error retrieving contentful data", error);
+//   });
+// }

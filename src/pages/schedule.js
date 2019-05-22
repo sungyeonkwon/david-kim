@@ -52,8 +52,8 @@ export default ({ data }) => {
     const text = item.node.schedule.json
     return (
       <div className={eventContainer}>
-        {formatDate(datetime)}
-        <div className="type-m">{documentToReactComponents(text)}</div>
+        <div className="date">{formatDate(datetime)}</div>
+        <div className="type-m event">{documentToReactComponents(text)}</div>
       </div>
     )  
   }

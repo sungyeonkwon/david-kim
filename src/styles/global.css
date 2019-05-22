@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Cochin-Regular";
+  src: url("../../static/Cochin-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Cochin-Italic";
+  src: url("../../static/Cochin-Italic.woff") format("woff");
+}
+
 html {
   background-color:#2b2b2b;
   color:white;
@@ -6,10 +16,16 @@ html {
 }
 
 body {
+  font-family: "Cochin-Regular";
   width:100%;
   height:100%;
   margin: 0;
   padding: 0;
+}
+
+i,
+em {
+  font-family: "Cochin-Italic";
 }
 
 a, a:visited {
@@ -18,7 +34,9 @@ a, a:visited {
 }
 
 a:hover {
-  color: rgba(255,255,255,.3)
+  color: rgba(255,255,255,.3);
+  filter: blur(2px);
+  transition: all 0.3s ease-in-out;
 }
 
 *:focus {
@@ -93,6 +111,14 @@ button {
   padding:20px 0;
   display:block;
   width:100%;
+}
+
+.date {
+  margin-bottom:15px;
+}
+.event p {
+  margin: 0;
+  padding: 0;
 }
 
 /** INPUT **/

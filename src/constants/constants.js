@@ -1,1 +1,2 @@
-export const SCROLLBAR_W = 16;
+export const RED = 'red';
+export const BLUE = 'blue';
