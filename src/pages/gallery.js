@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import Arrow from '../components/arrow'
 
 
-class Gallery extends Component {
+export default class Gallery extends Component {
 
   state = {
     gallery: this.props.data.allContentfulGallery.edges[0].node.gallery,
@@ -105,8 +105,6 @@ class Gallery extends Component {
 
   }
 }
-
-export default Gallery
 
 export const query = graphql`
   query {

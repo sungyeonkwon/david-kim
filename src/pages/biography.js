@@ -22,8 +22,8 @@ export default ({ data }) => {
         className={portrait}
         src={img} 
       />
-    <div className="type-l">{documentToReactComponents(intro)}</div>
-    <div className="type-m">{documentToReactComponents(body)}</div>
+    <div className="type-m">{documentToReactComponents(intro)}</div>
+    <div className="type-s">{documentToReactComponents(body)}</div>
    </Layout>
   )
 

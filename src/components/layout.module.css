@@ -5,7 +5,7 @@
 }
 
 .container {
-  padding: 20px;
+  padding: 40px;
   width: 65%;
   height: 100vh;
   margin: 0 auto;
@@ -19,40 +19,41 @@
   width: 32%;
   height: 100vh;
   position: fixed;
-  background:-webkit-linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%);
-  background:-o-linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%);
-  background:-moz-linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%);
-  background:linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%);
+  background:-webkit-linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+  background:-o-linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgb(0,0,0) 100%);
+  background:-moz-linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgb(0,0,0) 100%);
+  background:linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgb(0,0,0) 100%);
 }
 
 .header {
   width: 35%;
   height: 100vh;
-  /* border: 2px solid red; */
 }
 
 .ul {
   list-style: none;
   margin: 0;
-  padding: 20px;
+  padding: 40px;
   position: fixed;
 }
 
 .ul li {
-  font-size: 30px;
+  font-size: 34px;
+  padding-bottom:8px;
 }
 
 .ul li a {
-  color: black;
+  color: white;
 }
 
-/* 
 @media only screen and (max-width: 1185px) {
 
   .container {
-    margin: 0 auto;
-    padding: 0 15px;
+    padding: 20px;
   }
   
+  .ul {
+    padding: 20px;
+  }
   
-} */
+}

@@ -2,11 +2,31 @@ import React from "react"
 import { graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { css } from 'linaria';
-import Layout from "../components/layout"
+import { styled } from 'linaria/react'
 
-const eventContainer = css`
+import Layout from "../components/layout"
+import { POINT } from "../constants/constants"
+
+
+const UpcomingEventContainer = styled.div`
   border-top: 1px solid white;
-  padding-top: 20px;
+  padding: 12px 0;
+`
+// TODO: 2 coloumn grid
+const PastEventContainer = styled.div`
+  border-top: 1px solid white;
+  padding: 12px 0;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-gap: 50px;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+`
+
+const Datetime = styled.div`
+  margin-bottom: 15px;
+  color: ${POINT}
 `
 
 const formatDate = date => {
@@ -51,10 +71,10 @@ export default ({ data }) => {
     const datetime = new Date(item.node.datetime)
     const text = item.node.schedule.json
     return (
-      <div className={eventContainer}>
-        <div className="date">{formatDate(datetime)}</div>
-        <div className="type-m event">{documentToReactComponents(text)}</div>
-      </div>
+      <>
+        <Datetime>{formatDate(datetime)}</Datetime>
+        <p className="type-s event">{documentToReactComponents(text)}</p>
+      </>
     )  
   }
 
@@ -69,9 +89,9 @@ export default ({ data }) => {
   return (
     <Layout>
       <h1>Upcoming</h1>
-      {upcomingEvents}
+      <UpcomingEventContainer>{upcomingEvents}</UpcomingEventContainer>
       <h1>Past</h1>
-      {pastEvents}
+      <PastEventContainer>{pastEvents}</PastEventContainer>
     </Layout>
   )
 

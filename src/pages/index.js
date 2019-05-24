@@ -2,6 +2,13 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Layout from "../components/layout"
+import { styled } from 'linaria/react'
+import { FONTSIZE } from "../constants/constants"
+
+const Strapline = styled.div`
+  color: white;
+  font-size: ${FONTSIZE.large};
+`
 
 export default ({ data }) => {
   const node = data.allContentfulHome.edges[0].node
@@ -13,13 +20,12 @@ export default ({ data }) => {
       <div className="background-container">
         <img src = {backgroundImage} />
       </div>
-      <p className="type-white type-xl">
+      <Strapline>
         {documentToReactComponents(strapline)}
-      </p>
+      </Strapline>
     </Layout>
   )
 }
-
 
 export const query = graphql`
   query {
