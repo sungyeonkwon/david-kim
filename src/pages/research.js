@@ -1,31 +1,35 @@
 import React from "react"
 import Layout from "../components/layout"
 import { styled } from 'linaria/react'
+import { css } from 'linaria';
 
 const Row = styled.div`
-  background-color: pink;
+  // background-color: pink;
   border-top: 1px solid white;
+  padding-top: 10px;
   width:100%;
-  height:70px;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
 `
 const Subheading = styled.div`
   font-size: 18px;
+  margin: 40px 0;
 `
 
 const Number = styled.div`
-  background-color: red;
-  width: 15%;
+  width: 10%;
 `
 const Title = styled.div`
-  background-color: blue;
-  width: 66%;
+  width: 60%;
+  padding-right: 35px;
 `
 const Download = styled.div`
-  background-color: green;
-  width: 20%;
+  width: 30%;
+`
+const audio = css`
+  margin: 20px 0;
+  filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
 `
 
 export default () => {
@@ -38,10 +42,10 @@ export default () => {
         <Title>
         <span className="title">Johannes Brahms performing his Ungarischer Tanz no. 1 in G minor.</span>
         <span className="des">Cylinder digitally remastered by Jonathan Berger.</span>
-        <audio src={'01-brahms-speaking-and-playing.mp3'} controls/>
+        <audio className={audio} src={'01-brahms-speaking-and-playing.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -51,7 +55,7 @@ export default () => {
         <span className="des">The Great Violinists, Testament, CD 1.</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -61,7 +65,7 @@ export default () => {
         <span className="des">The Pupils of Clara Schumann. Pearl Gemm CD 6</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -71,7 +75,7 @@ export default () => {
         <span className="des">The Pupils of Clara Schumann. Pearl Gemm CD 6</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -81,7 +85,7 @@ export default () => {
         <span className="des">Recorded for G&T 1903, The Pupils of Clara Schumann. Pearl Gemm CD 6</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -91,7 +95,7 @@ export default () => {
         <span className="des">Etelka Freund, Pearl, CD 2</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -101,7 +105,7 @@ export default () => {
         <span className="des">Etelka Freund, Pearl, CD 1</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
 
@@ -115,7 +119,7 @@ export default () => {
         <span className="title">Fanny Davies, movement 2, Kuriose Geschichte</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -124,7 +128,7 @@ export default () => {
         <span className="title">Adelina de Lara, movement 2, Kuriose Geschichte</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -133,7 +137,7 @@ export default () => {
         <span className="title">Fanny Davies, movement 4, Bittendes Kind</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -142,7 +146,7 @@ export default () => {
         <span className="title">Adelina de Lara, movement 4, Bittendes Kind </span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -151,7 +155,7 @@ export default () => {
         <span className="title">Fanny Davies, movement 5, Glückes genug</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -160,7 +164,7 @@ export default () => {
         <span className="title">Adelina de Lara, movement 5, Glückes genug</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -169,7 +173,7 @@ export default () => {
         <span className="title">Fanny Davies, movement 11, Fürchtenmachen</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -178,7 +182,7 @@ export default () => {
         <span className="title">Adelina de Lara, movement 11, Fürchtenmachen</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -187,7 +191,7 @@ export default () => {
         <span className="title">Fanny Davies, movement 10, Fast zu ernst</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -196,7 +200,7 @@ export default () => {
         <span className="title">Adelina de Lara, movement 10, Fast zu ernst </span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
 
@@ -211,7 +215,7 @@ export default () => {
         <span className="des">The Great Pianists, vol. 1, Dal Segno</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -221,7 +225,7 @@ export default () => {
         <span className="des">Johannes Brahms Lied-Edition, vol. 8, ArkivCD</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -231,7 +235,7 @@ export default () => {
         <span className="des">Johannes Brahms Lied-Edition, vol. 8, ArkivCD</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -241,7 +245,7 @@ export default () => {
         <span className="des">Johannes Brahms Lied-Edition, vol. 8, ArkivCD</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -251,7 +255,7 @@ export default () => {
         <span className="des">Johannes Brahms Lied-Edition, vol. 8, ArkivCD</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -261,7 +265,7 @@ export default () => {
         <span className="des">Alexander Scriabin, The Composer as Pianist, Pierian</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -271,7 +275,7 @@ export default () => {
         <span className="des">Alexander Scriabin, The Composer as Pianist, Pierian</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -281,7 +285,7 @@ export default () => {
         <span className="des">Alexander Scriabin, The Composer as Pianist, Pierian</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -291,7 +295,7 @@ export default () => {
         <span className="des">Sergei Rachmaninoff, The Complete Recordings. BMG CD 1</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -301,7 +305,7 @@ export default () => {
         <span className="des">Sergei Rachmaninoff, The Complete Recordings. BMG CD 8</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -311,7 +315,7 @@ export default () => {
         <span className="des">Sergei Rachmaninoff, The Complete Recordings. BMG CD 7</span>
         </Title>
         <Download>
-          <a href="" target="_blank">Download</a>
+          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
     </Layout>

@@ -7,4 +7,4 @@ export const FONTSIZE = {
   medium: '32px',
   small: '22px',
   xsmall: '14px',
-}
+};

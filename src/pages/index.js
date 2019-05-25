@@ -1,9 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import Layout from "../components/layout"
+import Layout from '../components/layout'
 import { styled } from 'linaria/react'
-import { FONTSIZE } from "../constants/constants"
+import { FONTSIZE } from '../constants/constants'
 
 const Strapline = styled.div`
   color: white;
@@ -14,7 +14,6 @@ export default ({ data }) => {
   const node = data.allContentfulHome.edges[0].node
   const strapline = node.strapline.json
   const backgroundImage = node.background.fluid.src
-  console.log("node", strapline)
   return(
     <Layout>
       <div className="background-container">

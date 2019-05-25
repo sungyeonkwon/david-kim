@@ -5,13 +5,11 @@
 }
 
 .container {
-  padding: 40px;
   width: 65%;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
   max-width: 1200px;
-  padding: 20 35px;
-  /* border: 2px solid red; */
+  padding: 30px 35px 60px 35px;
 }
 
 .background {
@@ -49,7 +47,7 @@
 @media only screen and (max-width: 1185px) {
 
   .container {
-    padding: 20px;
+    padding: 20px 35px 60px 35px;
   }
   
   .ul {

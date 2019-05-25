@@ -6,22 +6,28 @@ import { styled } from 'linaria/react'
 
 import Layout from "../components/layout"
 import { POINT } from "../constants/constants"
-
+import { formatDate } from '../constants/helpers'
+import { isFuture } from '../constants/helpers'
 
 const UpcomingEventContainer = styled.div`
   border-top: 1px solid white;
   padding: 12px 0;
 `
-// TODO: 2 coloumn grid
 const PastEventContainer = styled.div`
   border-top: 1px solid white;
   padding: 12px 0;
   display: grid;
-  grid-template-columns: 30% 30% 30%;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 50px;
   justify-content: space-between;
-  justify-items: center;
-  align-items: center;
+  justify-items: flex-start;
+  align-items: flex-start;
+  @media only screen and (max-width: 1185px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media only screen and (max-width: 786px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 const Datetime = styled.div`
@@ -29,62 +35,56 @@ const Datetime = styled.div`
   color: ${POINT}
 `
 
-const formatDate = date => {
-  const MONTH_NAMES = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec'
-  ];
-  const day = date.getDate();
-  const month = MONTH_NAMES[date.getMonth()];
-  const year = date.getFullYear();
-  let hour = date.getHours();
-  let mins = date.getMinutes();
+const Subheading = styled.div`
+  font-size: 30px;
+  margin-bottom: 20px;
+`
 
-  // Add trailing zero to time
-  hour = hour < 10 ? '0' + hour : hour;
-  mins = mins < 10 ? '0' + mins : mins;
+const ItemRow = styled.div`
+  grid-column: 1 / 4;
+  @media only screen and (max-width: 1185px) {
+    grid-column: 1 / 3;
+  }
+  @media only screen and (max-width: 786px) {
+    grid-column: 1 / 2;
+  }
+`
 
-  return `${day} ${month} ${year} ${hour}:${mins}`;
-};
+const yearCache = []
 
 export default ({ data }) => {
   
   const items = data.allContentfulSchedule.edges
 
-  const isUpcoming = t => {
-    const today = new Date()
-    const event = new Date(t)
-    return event > today
-  }
-
-  const renderEvent = item => {
+  const renderEvent = (item, showYear = false, i) => {
     const datetime = new Date(item.node.datetime)
     const text = item.node.schedule.json
+    const year = datetime.getFullYear()
+    var yearTitle; 
+
+    if (!yearCache.includes(year)){
+      yearTitle = <Subheading>{year}</Subheading>
+      yearCache.push(year)
+    }
+    
     return (
       <>
+      { yearTitle ? <ItemRow>{yearTitle}</ItemRow> : null }
+      <div>
         <Datetime>{formatDate(datetime)}</Datetime>
-        <p className="type-s event">{documentToReactComponents(text)}</p>
+        <div className="type-s event">{documentToReactComponents(text)}</div>
+      </div>
       </>
     )  
   }
 
   const upcomingEvents = items
-    .filter( item => isUpcoming(item.node.datetime))
+    .filter( item => isFuture(item.node.datetime))
     .map( item => renderEvent(item) )
 
   const pastEvents = items
-    .filter( item => !isUpcoming(item.node.datetime))
-    .map( item => renderEvent(item) )
+    .filter( item => !isFuture(item.node.datetime))
+    .map( (item, i) => renderEvent(item, true, i) )
 
   return (
     <Layout>
