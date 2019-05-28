@@ -5,10 +5,10 @@ import { css } from 'linaria';
 import Layout from "../components/layout"
 import { RED, BLUE } from "../constants/constants"
 
-console.log("constants", RED)
 const portrait = css`
-  width: 80%;
-  margin: 0 auto;
+  width: 90%;
+  margin: 10px 0 40px 0;
+
 `
 
 export default ({ data }) => {
@@ -18,11 +18,11 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <img 
-        className={portrait}
-        src={img} 
-      />
     <div className="type-m">{documentToReactComponents(intro)}</div>
+    <img 
+      className={portrait}
+      src={img} 
+    />
     <div className="type-s">{documentToReactComponents(body)}</div>
    </Layout>
   )

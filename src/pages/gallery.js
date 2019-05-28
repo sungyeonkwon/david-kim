@@ -21,7 +21,7 @@ export default class Gallery extends Component {
         className={s.slideshow}>
         <div className={s.inner}>
           <div
-            onClick={(e) => this.onArrowClick('prev')} 
+            onClick={(e) => this.onArrowClick(e, 'prev')} 
             className={s.prev} >
               <Arrow direction="left" />
           </div>
@@ -30,7 +30,7 @@ export default class Gallery extends Component {
               src={this.state.selectedImg} 
             />
           <div
-            onClick={(e) => this.onArrowClick('next')} 
+            onClick={(e) => this.onArrowClick(e, 'next')} 
             className={s.next} >
               <Arrow direction="right" />
           </div>
@@ -58,8 +58,8 @@ export default class Gallery extends Component {
     }
   }
 
-  onArrowClick = direction => {
-    console.log("arrow was clicked")
+  onArrowClick = (e, direction) => {
+    console.log("arrow was clicked", e.target.tagName)
     const newIndex = this.rotateIndex(this.state.selectedImgIndex, direction)
     const newImage = this.state.gallery
       .filter((img, index) => index === newIndex)
@@ -72,7 +72,7 @@ export default class Gallery extends Component {
 
   onEmptySpaceClick = target => {
     const tag = target.tagName.toLowerCase()
-    if (tag !== 'span' && tag !== 'img' && tag !== 'svg'){
+    if (tag !== 'span' && tag !== 'img' && tag !== 'svg' && tag !== 'path'){
       this.setState({ isSlideshow: false })
     }
   }

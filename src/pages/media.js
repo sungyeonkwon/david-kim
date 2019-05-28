@@ -2,33 +2,41 @@ import React from "react"
 import { graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Layout from "../components/layout"
+import { styled } from 'linaria/react'
+
+const Heading = styled.h3`
+  maragin-bottom: 0;
+  font-size:28px;
+  border-top: 1px solid white;
+  padding-top: 10px;
+`
+
+const Item = styled.h3`
+  maragin-bottom: 30px;
+`
 
 
 export default ({ data }) => {
 
   const edges = data.allContentfulMedia.edges
-  let audioUrl;
-  // if (edges.length > 0) {
-    const mediaItems = edges.map( edge => {
-      const audios = edge.node.audios.map( obj => {
-        return(
-        <>
-          <h3>{obj.title}</h3>
-          <p>{obj.description}</p>
-          <audio key={obj.id} src={obj.file.url} controls/>
-        </>
-        )
-      })
-
+  const mediaItems = edges.map( edge => {
+    const audios = edge.node.audios.map( obj => {
       return(
-        <>
-          <h1>{edge.node.title}</h1>
-          <p className="para-divider">{documentToReactComponents(edge.node.description.json)}</p>
-          {audios}
-        </>
+      <Item>
+        <Heading>{obj.title}</Heading>
+        <p>{obj.description}</p>
+        <audio key={obj.id} src={obj.file.url} controls/>
+      </Item>
       )
     })
-  // }
+
+    return(
+      <>
+        <h1>{edge.node.title}</h1>
+        {audios}
+      </>
+    )
+  })
 
   return (
     <Layout>
@@ -44,10 +52,6 @@ export const query = graphql`
         node {
           id
           title
-          description {
-            id
-            json
-          }
           audios {
             id
             title

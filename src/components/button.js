@@ -3,12 +3,11 @@ import { css } from 'linaria'
 import Arrow from './arrow'
 
 const btn = css` 
-  background-color: black;
   padding: 10px 15px;
   display: inline-block;
-  font-size: 22px;
-  color: white;
-`
+  font-size: 28px;
+  font-family: "Cochin-Regular";
+  `
 const div = css`
   width: 150px;
   display: flex;
@@ -16,6 +15,8 @@ const div = css`
   justify-content: center;
   flex-direction: row;
   flex-wrap: nowrap;
+  background: #0d4b56;
+  color: white;
 `
 
 const inline = css`

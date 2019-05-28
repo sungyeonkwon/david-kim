@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { css } from 'linaria';
+import { styled } from 'linaria/react'
 import Layout from '../components/layout'
 import Button from '../components/button'
 
@@ -10,30 +10,43 @@ const block = css`
 `
 
 const input = css`
+  color:white;
+  width:30%;
+  font-family: "Cochin-Regular";
+  font-size:20px;
   background-color: red;
   border: none;
   margin: 20px;
-  padding: 10px 15px;
-  background-color: rgba(255,255,255,0.3);
+  padding: 7px 15px;
+  background-color: rgba(255,255,255,0.2);
+  @media only screen and (max-width: 786px) {
+    width:100%;
+    margin-left: 0px;
+  }
 `
 
-const textarea = css`
+const Textarea = styled.textarea`
+  color:white;
+  font-family: "Cochin-Regular";
+  font-size:20px;
   resize: none;
+  padding: 7px 15px;
   width: 90%;
   height: 300px;
-  background-color: rgba(255,255,255,0.3);
+  background-color: rgba(255,255,255,0.2);
   border: none;
+  @media only screen and (max-width: 786px) {
+    width:100%;
+  }
 `
-class Contact extends Component {
+export default class Contact extends Component {
 
   state = {
-    // content: this.props.data.allContentfulContact.edges[0].node.bodytext.json,
   }
 
   render() {
     return (
       <Layout>
-        {/* <div>{documentToReactComponents(this.state.content)}</div> */}
         <form 
           name="contact-form"
           method="POST"
@@ -48,7 +61,7 @@ class Contact extends Component {
               type="text" 
               name="name" 
               className={input}
-              placeholder="Name" 
+              // placeholder="Name" 
               required
             />
           </label>
@@ -58,17 +71,16 @@ class Contact extends Component {
               type="email" 
               name="email" 
               className={input}
-              placeholder="Email Address" 
+              // placeholder="Email Address" 
               required
             />
           </label>
           <label className={block}> 
             {/* <span className={block}>Message</span> */}
-            <textarea
+            <Textarea
               name="message"
-              className={textarea}
               required
-            ></textarea>
+            ></Textarea>
           </label>
 
           <button type="submit">
@@ -79,9 +91,6 @@ class Contact extends Component {
     )
   }
 }
-
-
-export default Contact
 
 export const query = graphql`
   query {

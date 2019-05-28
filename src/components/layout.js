@@ -1,6 +1,5 @@
 import React, { Component}  from "react"
 import { Link } from "gatsby"
-import s from "./layout.module.css"
 // import { css } from 'linaria';
 // import { styled } from 'linaria/react'
 
@@ -20,11 +19,15 @@ export default class Layout extends Component {
     gallery: ['list-item'],
     research: ['list-item'],
     contact: ['list-item'],
+    showMobileMenu: false,
+    mobileMenu: ['menu'],
+    background: ['background'],
+
   }
 
   handleMouseOver = e => {
     const page = e.target.textContent.toLowerCase()
-    if (e.target.tagName === 'A' && page !== 'david hyun-su kim') {
+    if (e.target.tagName === 'A') {
       console.log("insdie of handleMouseOver")
       this.setState({
         [page]: ['list-item', 'active']
@@ -34,7 +37,7 @@ export default class Layout extends Component {
 
   handleMouseOut = e => {
     const page = e.target.textContent.toLowerCase()
-    if (e.target.tagName === 'A' && page !== 'david hyun-su kim' && page !== this.state.currPage) {
+    if (e.target.tagName === 'A' && page !== this.state.currPage) {
       this.setState({
         [page]: ['list-item']
       })
@@ -43,7 +46,7 @@ export default class Layout extends Component {
 
   handleClick = e => {
     const page = e.target.textContent.toLowerCase()
-    if (e.target.tagName === 'A' && page !== 'david hyun-su kim') {
+    if (e.target.tagName === 'A') {
       this.setState({
         [page]: ['list-item', 'active'],
         currPage: page,
@@ -51,20 +54,38 @@ export default class Layout extends Component {
     }
   }
 
+  handleMobileMenu = e => {
+    if (!this.state.showMobileMenu){
+      this.setState({
+        showMobileMenu: !this.state.showMobileMenu,
+        mobileMenu: ['menu', 'show'],
+        background: ['background', 'extend'],
+      })
+    } else {
+      this.setState({
+        showMobileMenu: !this.state.showMobileMenu,
+        mobileMenu: ['menu'],
+        background: ['background'],
+      })
+    }
+
+  }
+
   render() {
     console.log(this.state.currPage)
-    console.log("DIG", this.props)
-    // console.log("path", this.props.location.pathname)
+    console.log("background>>", this.state.background.join(' '))
     return(
-      <div className={s.wrapper}>
-        <header className={s.header}>
-          <div className={s.background} />
+      <div className='wrapper'>
+        <header className='header'>
+          <span className='logo-container'>
+            <Link className='logo' to="/">David Hyun-Su Kim</Link><br/><br/>
+          </span>
+          <div className={this.state.background.join(' ')} />
           <ul
             onMouseOver={this.handleMouseOver} 
             onMouseOut={this.handleMouseOut}
             onClick={this.handleClick}
-            className={s.ul}>
-            <ListLink to="/">David Hyun-Su Kim</ListLink><br/><br/>
+            className={this.state.mobileMenu.join(' ')}>
             <ListLink cls={this.state.biography.join(' ')} to="/biography/">Biography</ListLink>
             <ListLink cls={this.state.schedule.join(' ')} to="/schedule/">Schedule</ListLink>
             <ListLink cls={this.state.media.join(' ')} to="/media/">Media</ListLink>
@@ -73,7 +94,10 @@ export default class Layout extends Component {
             <ListLink cls={this.state.contact.join(' ')} to="/contact/">Contact</ListLink>
           </ul>
         </header>
-        <div className={s.container}>
+        <span 
+          onClick={this.handleMobileMenu}
+          className='hamburger'><span>Menu</span></span>
+        <div className='container'>
         {this.props.children}
         </div>
       </div>

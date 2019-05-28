@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { css } from 'linaria';
 import { styled } from 'linaria/react'
 
 import Layout from "../components/layout"
@@ -9,19 +8,25 @@ import { POINT } from "../constants/constants"
 import { formatDate } from '../constants/helpers'
 import { isFuture } from '../constants/helpers'
 
+
 const UpcomingEventContainer = styled.div`
   border-top: 1px solid white;
   padding: 12px 0;
+  margin-bottom:60px;
+
 `
 const PastEventContainer = styled.div`
   border-top: 1px solid white;
   padding: 12px 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 50px;
+  grid-column-gap: 50px;
+  grid-row-gap: 20px;
   justify-content: space-between;
   justify-items: flex-start;
   align-items: flex-start;
+  margin-bottom:60px;
+
   @media only screen and (max-width: 1185px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -32,11 +37,12 @@ const PastEventContainer = styled.div`
 
 const Datetime = styled.div`
   margin-bottom: 15px;
+  font-size: 24px;
   color: ${POINT}
 `
 
 const Subheading = styled.div`
-  font-size: 30px;
+  font-size: 28px;
   margin-bottom: 20px;
 `
 
@@ -72,7 +78,7 @@ export default ({ data }) => {
       { yearTitle ? <ItemRow>{yearTitle}</ItemRow> : null }
       <div>
         <Datetime>{formatDate(datetime)}</Datetime>
-        <div className="type-s event">{documentToReactComponents(text)}</div>
+        <div className="type-xs event">{documentToReactComponents(text)}</div>
       </div>
       </>
     )  
