@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { css } from 'linaria';
+import Layout from '../components/layout'
 
 const portrait = css`
   width: 90%;
@@ -14,14 +15,14 @@ export default ({ data }) => {
   const img = data.allContentfulBiography.edges[0].node.portrait.fluid.src
 
   return (
-    <>
+    <Layout>
     <div className="type-m">{documentToReactComponents(intro)}</div>
     <img 
       className={portrait}
       src={img} 
     />
     <div className="type-s">{documentToReactComponents(body)}</div>
-   </>
+   </Layout>
   )
 
 }

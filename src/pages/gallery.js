@@ -2,6 +2,7 @@ import React, { Component}  from "react"
 import { graphql } from "gatsby"
 import s from "./gallery.module.css"
 import Arrow from '../components/arrow'
+import Layout from '../components/layout'
 
 
 export default class Gallery extends Component {
@@ -94,12 +95,12 @@ export default class Gallery extends Component {
 
   render() {
     return (
-      <>
+      <Layout>
       {this.state.isSlideshow? this.slideshow() : null }
       <div className={s.container}>
         {this.renderImages()}
       </div>
-    </>
+    </Layout>
     )
 
   }

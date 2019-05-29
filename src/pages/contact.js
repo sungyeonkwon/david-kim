@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { css } from 'linaria';
 import { styled } from 'linaria/react'
 import Button from '../components/button'
+import Layout from '../components/layout'
 
 const block = css`
   display: block;
@@ -45,7 +46,7 @@ export default class Contact extends Component {
 
   render() {
     return (
-      <>
+      <Layout>
         <form 
           name="contact-form"
           method="POST"
@@ -86,7 +87,7 @@ export default class Contact extends Component {
             <Button type="submit">Submit</Button>
           </button>
         </form>
-      </>
+      </Layout>
     )
   }
 }
