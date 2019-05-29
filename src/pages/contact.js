@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import { graphql } from "gatsby"
 import { css } from 'linaria';
 import { styled } from 'linaria/react'
-import Layout from '../components/layout'
 import Button from '../components/button'
 
 const block = css`
@@ -19,7 +18,7 @@ const input = css`
   margin: 20px;
   padding: 7px 15px;
   background-color: rgba(255,255,255,0.2);
-  @media only screen and (max-width: 786px) {
+  @media only screen and (max-width: 1185px) {
     width:100%;
     margin-left: 0px;
   }
@@ -35,7 +34,7 @@ const Textarea = styled.textarea`
   height: 300px;
   background-color: rgba(255,255,255,0.2);
   border: none;
-  @media only screen and (max-width: 786px) {
+  @media only screen and (max-width: 1185px) {
     width:100%;
   }
 `
@@ -46,7 +45,7 @@ export default class Contact extends Component {
 
   render() {
     return (
-      <Layout>
+      <>
         <form 
           name="contact-form"
           method="POST"
@@ -87,7 +86,7 @@ export default class Contact extends Component {
             <Button type="submit">Submit</Button>
           </button>
         </form>
-      </Layout>
+      </>
     )
   }
 }

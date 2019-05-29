@@ -12,7 +12,6 @@ const ListLink = props => (
 export default class Layout extends Component {
 
   state = {
-    currPage: '',
     biography: ['list-item'], 
     schedule: ['list-item'],
     media: ['list-item'],
@@ -46,10 +45,10 @@ export default class Layout extends Component {
 
   handleClick = e => {
     const page = e.target.textContent.toLowerCase()
+    console.log("page", page)
     if (e.target.tagName === 'A') {
       this.setState({
         [page]: ['list-item', 'active'],
-        currPage: page,
         mobileMenu: ['menu'],
         background: ['background'],
       })
@@ -59,7 +58,6 @@ export default class Layout extends Component {
   }
 
   handleMobileMenu = e => {
-    console.log("this was clicked")
     if (!this.state.showMobileMenu){
       this.setState({
         showMobileMenu: !this.state.showMobileMenu,

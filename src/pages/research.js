@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "../components/layout"
 import { styled } from 'linaria/react'
 import { css } from 'linaria';
 import Arrow from '../components/arrow'
@@ -40,7 +39,7 @@ const AudioTitle = styled.div`
 
 export default () => {
  return (
-    <Layout>
+    <>
       <h1>CD Tracks for “The Brahmsian Hairpin” in <i>19th-Century Music</i>, Summer 2012</h1>
       <Subheading>CD Tracks</Subheading>
       <Row>
@@ -351,7 +350,7 @@ export default () => {
           <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
-    </Layout>
+    </>
   )
 }
 
