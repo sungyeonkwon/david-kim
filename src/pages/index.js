@@ -8,7 +8,7 @@ import { FONTSIZE } from '../constants/constants'
 const Strapline = styled.div`
   color: white;
   font-size: ${FONTSIZE.large};
-  z-index:5;
+  z-index:-2;
   width: 90%;
   cursor: pointer;
   text-align:center;
@@ -19,7 +19,7 @@ const Strapline = styled.div`
 
 const StraplineContainer = styled.div`
   display: flex;
-  height:90vh;
+  height:85vh;
   width:100%;
   flex-direction:column;
   justify-content:flex-end;

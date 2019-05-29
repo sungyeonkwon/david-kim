@@ -76,27 +76,31 @@ export default class Layout extends Component {
     console.log("background>>", this.state.background.join(' '))
     return(
       <div className='wrapper'>
-        <header className='header'>
-          <span className='logo-container'>
-            <Link className='logo' to="/">David Hyun-Su Kim</Link><br/><br/>
+        <div className="mobile-bar">
+          <header className='header'>
+            <span className='logo-container'>
+              <Link className='logo' to="/">David Hyun-Su Kim</Link><br/><br/>
+            </span>
+            <div className={this.state.background.join(' ')} />
+            <ul
+              onMouseOver={this.handleMouseOver} 
+              onMouseOut={this.handleMouseOut}
+              onClick={this.handleClick}
+              className={this.state.mobileMenu.join(' ')}>
+              <ListLink cls={this.state.biography.join(' ')} to="/biography/">Biography</ListLink>
+              <ListLink cls={this.state.schedule.join(' ')} to="/schedule/">Schedule</ListLink>
+              <ListLink cls={this.state.media.join(' ')} to="/media/">Media</ListLink>
+              <ListLink cls={this.state.gallery.join(' ')} to="/gallery/">Gallery</ListLink>
+              <ListLink cls={this.state.research.join(' ')} to="/research/">Research</ListLink>
+              <ListLink cls={this.state.contact.join(' ')} to="/contact/">Contact</ListLink>
+            </ul>
+          </header>
+          <span 
+            onClick={this.handleMobileMenu}
+            className='hamburger'>
+              <span>Menu</span>
           </span>
-          <div className={this.state.background.join(' ')} />
-          <ul
-            onMouseOver={this.handleMouseOver} 
-            onMouseOut={this.handleMouseOut}
-            onClick={this.handleClick}
-            className={this.state.mobileMenu.join(' ')}>
-            <ListLink cls={this.state.biography.join(' ')} to="/biography/">Biography</ListLink>
-            <ListLink cls={this.state.schedule.join(' ')} to="/schedule/">Schedule</ListLink>
-            <ListLink cls={this.state.media.join(' ')} to="/media/">Media</ListLink>
-            <ListLink cls={this.state.gallery.join(' ')} to="/gallery/">Gallery</ListLink>
-            <ListLink cls={this.state.research.join(' ')} to="/research/">Research</ListLink>
-            <ListLink cls={this.state.contact.join(' ')} to="/contact/">Contact</ListLink>
-          </ul>
-        </header>
-        <span 
-          onClick={this.handleMobileMenu}
-          className='hamburger'><span>Menu</span></span>
+        </div>
         <div className='container'>
         {this.props.children}
         </div>
