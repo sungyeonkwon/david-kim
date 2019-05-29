@@ -50,11 +50,16 @@ export default class Layout extends Component {
       this.setState({
         [page]: ['list-item', 'active'],
         currPage: page,
+        mobileMenu: ['menu'],
+        background: ['background'],
       })
+    } else {
+      this.handleMobileMenu()
     }
   }
 
   handleMobileMenu = e => {
+    console.log("this was clicked")
     if (!this.state.showMobileMenu){
       this.setState({
         showMobileMenu: !this.state.showMobileMenu,
@@ -68,12 +73,9 @@ export default class Layout extends Component {
         background: ['background'],
       })
     }
-
   }
 
   render() {
-    console.log(this.state.currPage)
-    console.log("background>>", this.state.background.join(' '))
     return(
       <div className='wrapper'>
         <div className="mobile-bar">
@@ -81,7 +83,9 @@ export default class Layout extends Component {
             <span className='logo-container'>
               <Link className='logo' to="/">David Hyun-Su Kim</Link><br/><br/>
             </span>
-            <div className={this.state.background.join(' ')} />
+            <div 
+              onClick={this.handleMobileMenu}
+              className={this.state.background.join(' ')} />
             <ul
               onMouseOver={this.handleMouseOver} 
               onMouseOut={this.handleMouseOut}
@@ -98,7 +102,7 @@ export default class Layout extends Component {
           <span 
             onClick={this.handleMobileMenu}
             className='hamburger'>
-              <span>Menu</span>
+              <a>Menu</a>
           </span>
         </div>
         <div className='container'>

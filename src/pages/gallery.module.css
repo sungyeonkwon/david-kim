@@ -31,8 +31,6 @@
   top:0px;
   left:0px;
   z-index: 99;
-  /* opacity: 0;
-  display: none; */
   transition: all 0.3s ease-in-out;
 }
 
@@ -73,7 +71,17 @@
 
   .inner {
     max-width: 90%;
-    /* max-height: 60%; */
+  }
+  
+  .container {
+    margin-top:15px;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-column-gap: 5%;
+    grid-row-gap: 50px;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: flex-start;
   }
   
 }

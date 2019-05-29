@@ -259,6 +259,8 @@ audio {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    z-index:40;
+
   }
 
   .list-item {
@@ -266,12 +268,17 @@ audio {
   }
   
   .menu {
-    display: none;
+    z-index:30;
+    opacity:0;
+    transform: translate(0, -100%);
+    transition: all 0.4s ease-in-out;
   }
 
   .menu.show {
-    display: block;
+    opacity:1;
+    height: 100%;
     width:100%;
+    transform: translate(0, 0);
   }
 
   .wrapper {
@@ -303,6 +310,7 @@ audio {
     z-index:40;
     width:20%;
     font-size:22px;
+    cursor:pointer;
   }
 
   .logo {
@@ -317,25 +325,19 @@ audio {
   }
 
   .background {
-    background:none;
+    background:black;
     width: 100%;
-    height: 100%; 
+    height: 0px;
     opacity:0;
+    transition: all 0.4s ease-in-out;
   }
 
   .background.extend {
     height: 100%; 
     opacity:1;
-    background:black;
-    transition: opacity 0.4s ease-in-out;
     z-index: 10;
-    width: 100%;
     position: fixed;
     top:50px;
-    /* background:-webkit-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
-    background:-o-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgb(0,0,0) 100%);
-    background:-moz-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgb(0,0,0) 100%);
-    background:linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgb(0,0,0) 100%); */
   }
   
 }
