@@ -15,14 +15,14 @@ export default ({ data }) => {
   const img = data.allContentfulBiography.edges[0].node.portrait.fluid.src
 
   return (
-    <Layout>
+    <>
     <div className="type-m">{documentToReactComponents(intro)}</div>
     <img 
       className={portrait}
       src={img} 
     />
     <div className="type-s">{documentToReactComponents(body)}</div>
-   </Layout>
+   </>
   )
 
 }

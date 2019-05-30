@@ -93,12 +93,12 @@ export default ({ data }) => {
     .map( (item, i) => renderEvent(item, true, i) )
 
   return (
-    <Layout>
+    <>
       <h1>Upcoming</h1>
       <UpcomingEventContainer>{upcomingEvents}</UpcomingEventContainer>
       <h1>Past</h1>
       <PastEventContainer>{pastEvents}</PastEventContainer>
-    </Layout>
+    </>
   )
 
 }

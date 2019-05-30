@@ -38,9 +38,9 @@ export default ({ data }) => {
   })
 
   return (
-    <Layout>
+    <>
       {mediaItems}
-    </Layout>
+    </>
   )
 }
 

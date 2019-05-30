@@ -7,10 +7,10 @@ export default ({ data }) => {
   console.log("contact data", data)
   const content = data.allContentfulContact.edges[0].node.bodytext.json
   return (
-    <Layout>
+    <>
       Mail Successfully Sent
     <div>{documentToReactComponents(content)}</div>
-    </Layout>
+    </>
   )
 }
 

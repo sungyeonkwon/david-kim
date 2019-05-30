@@ -34,7 +34,7 @@ export default ({ data }) => {
   const strapline = node.strapline.json
   const backgroundImage = node.background.file.url + '?w=1000'
   return(
-    <Layout>
+    <>
       <div className="background-container">
         <img src = {backgroundImage} />
       </div>
@@ -45,7 +45,7 @@ export default ({ data }) => {
           </Link>
         </Strapline>
       </StraplineContainer>
-    </Layout>
+    </>
   )
 }
 

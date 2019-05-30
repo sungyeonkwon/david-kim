@@ -95,12 +95,12 @@ export default class Gallery extends Component {
 
   render() {
     return (
-      <Layout>
+      <>
       {this.state.isSlideshow? this.slideshow() : null }
       <div className={s.container}>
         {this.renderImages()}
       </div>
-    </Layout>
+      </>
     )
 
   }
