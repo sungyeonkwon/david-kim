@@ -16,7 +16,7 @@ const portrait = css`
 export default ({ data }) => {
   const intro = data.allContentfulBiography.edges[0].node.introtext.json
   const body = data.allContentfulBiography.edges[0].node.bodytext.json
-  const img = data.allContentfulBiography.edges[0].node.portrait.fluid.src
+  const img = `${data.allContentfulBiography.edges[0].node.portrait.file.url}?w=1000`
 
   return (
     <>
@@ -38,8 +38,8 @@ export const query = graphql`
         node {
           id
           portrait {
-            fluid {
-              src
+            file {
+              url
             }
           }
           introtext {

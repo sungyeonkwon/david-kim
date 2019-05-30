@@ -55,12 +55,12 @@ export default class Gallery extends Component {
       return index === n - 1 ? 0 : index + 1
     }
   }
-
+  
   onArrowClick = (e, direction) => {
     const newIndex = this.rotateIndex(this.state.selectedImgIndex, direction)
     const newImage = this.state.gallery
       .filter((img, index) => index === newIndex)
-      .map(img => img.fluid.src)
+      .map(img => `${img.file.url}?w=1000`)
     this.setState({ 
       selectedImg: newImage,
       selectedImgIndex: newIndex,
@@ -80,7 +80,7 @@ export default class Gallery extends Component {
         <img 
           key={index}
           className='gallery-img' 
-          src={img.fluid.src} 
+          src={`${img.file.url}?w=1000`} 
           index={index}
           onClick={(e) => this.onImageClick(e.target.src, index)}
           alt={img.title}

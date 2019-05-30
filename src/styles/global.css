@@ -68,7 +68,7 @@ label {
   margin-left:40px;
   margin-top:42px;
   position: fixed;
-  font-size:22px;
+  font-size:26px;
 }
 
 .menu {
@@ -143,9 +143,28 @@ label {
   src: url("../../static/Perpetua-Italic.woff") format("woff");
 }
 
+/* Superclarendon */
+@font-face {
+  font-family: "Superclarendon-Regular";
+  src: url("../../static/Superclarendon-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Superclarendon-Italic";
+  src: url("../../static/Superclarendon-Italic.woff") format("woff");
+}
 
 html {
-  background-color:#0d4142;
+
+  /* background-color:#8e6b32; */
+  /* background-color:#642320; */
+  /* background-color:#542a45; */
+  /* background-color:#22305d; */
+  /* background-color:#0d4142; */
+  /* background-color:#5f5b4b; */
+  background-color:#4b595f;
+
+
   color:white;
   overflow-y: scroll;
   line-height:1.45;
@@ -156,6 +175,7 @@ body {
   /* font-family: "Walbaum-Regular"; */
   /* font-family: "Sabon-Regular"; */
   /* font-family: "Perpetua-Regular"; */
+  /* font-family: "Superclarendon-Regular"; */
   width:100%;
   height:100%;
   margin: 0;
@@ -169,6 +189,7 @@ em {
   /* font-family: "Walbaum-Italic"; */
   /* font-family: "Sabon-Italic"; */
   /* font-family: "Perpetua-Italic"; */
+  /* font-family: "Superclarendon-Italic"; */
 }
 
 p {
@@ -532,11 +553,6 @@ audio {
 
   p {
     font-size: 18px;
-  }
-
-  .gallery-container {
-    grid-template-columns: 40% 40%;
-    grid-gap: 50px;
   }
 
   .inner {

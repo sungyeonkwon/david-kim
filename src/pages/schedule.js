@@ -39,6 +39,7 @@ const Datetime = styled.h3`
 `
 
 const Subheading = styled.h1`
+  margin: 12px 0 0 0;
 `
 
 const ItemRow = styled.div`
