@@ -27,7 +27,6 @@ export default class Layout extends Component {
   handleMouseOver = e => {
     const page = e.target.textContent.toLowerCase()
     if (e.target.tagName === 'A') {
-      console.log("insdie of handleMouseOver")
       this.setState({
         [page]: ['list-item', 'active']
       })
@@ -44,14 +43,34 @@ export default class Layout extends Component {
   }
 
   handleClick = e => {
+
+    const allPages = ['biography', 'schedule', 'media', 'gallery', 'research', 'contact']
+
+    // Click on logo 
+    if (e.target.className === 'logo'){
+      this.setState({
+        currPage: 'index',
+        showMobileMenu: false,
+      }, () => allPages.map(item => {
+        this.setState({[item]: ['list-item']})
+      }))
+
+    }
+
     const page = e.target.textContent.toLowerCase()
-    console.log("page", page)
+    const inactivePages = allPages.filter(item => item !== page)
+
+    // Click on other pages
     if (e.target.tagName === 'A') {
       this.setState({
+        currPage: page,
         [page]: ['list-item', 'active'],
         mobileMenu: ['menu'],
         background: ['background'],
-      })
+        showMobileMenu: false,
+      }, () => inactivePages.map(item => {
+          this.setState({[item]: ['list-item']})
+        }))
     } else {
       this.handleMobileMenu()
     }
@@ -79,7 +98,9 @@ export default class Layout extends Component {
         <div className="mobile-bar">
           <header className='header'>
             <span className='logo-container'>
-              <Link className='logo' to="/">David Hyun-Su Kim</Link><br/><br/>
+              <Link 
+                onClick={this.handleClick}
+                className='logo' to="/">David Hyun-Su Kim</Link><br/><br/>
             </span>
             <div 
               onClick={this.handleMobileMenu}
