@@ -3,7 +3,6 @@ import { Link, graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { styled } from 'linaria/react'
 import { FONTSIZE } from '../constants/constants'
-import Layout from '../components/layout'
 
 const Strapline = styled.div`
   color: white;

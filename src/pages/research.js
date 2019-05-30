@@ -1,8 +1,6 @@
 import React from "react"
 import { styled } from 'linaria/react'
 import { css } from 'linaria';
-import Arrow from '../components/arrow'
-import Layout from '../components/layout'
 
 const Row = styled.div`
   // background-color: pink;

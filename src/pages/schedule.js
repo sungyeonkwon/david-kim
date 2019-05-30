@@ -6,7 +6,6 @@ import { styled } from 'linaria/react'
 import { POINT } from "../constants/constants"
 import { formatDate } from '../constants/helpers'
 import { isFuture } from '../constants/helpers'
-import Layout from '../components/layout'
 
 
 const UpcomingEventContainer = styled.div`

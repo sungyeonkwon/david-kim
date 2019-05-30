@@ -1,8 +1,6 @@
 import React, { Component}  from "react"
 import { graphql } from "gatsby"
-import s from "./gallery.module.css"
 import Arrow from '../components/arrow'
-import Layout from '../components/layout'
 
 
 export default class Gallery extends Component {
@@ -18,20 +16,20 @@ export default class Gallery extends Component {
     return (
       <div
         onClick={(e) => this.onEmptySpaceClick(e.target)} 
-        className={s.slideshow}>
-        <div className={s.inner}>
+        className='slideshow'>
+        <div className='inner'>
           <div
             onClick={(e) => this.onArrowClick(e, 'prev')} 
-            className={s.prev} >
+            className='prev' >
               <Arrow direction="left" />
           </div>
             <img 
-              className={s.slide} 
+              className='slide' 
               src={this.state.selectedImg} 
             />
           <div
             onClick={(e) => this.onArrowClick(e, 'next')} 
-            className={s.next} >
+            className='next' >
               <Arrow direction="right" />
           </div>
         </div>
@@ -51,7 +49,7 @@ export default class Gallery extends Component {
     const n = this.state.gallery.length
 
     if (direction === 'prev'){
-      return index === 0 ? n - 1 : index - 1 
+      return index === 0 ? n - 1 : index - 1
     }
     if (direction === 'next'){
       return index === n - 1 ? 0 : index + 1
@@ -59,7 +57,6 @@ export default class Gallery extends Component {
   }
 
   onArrowClick = (e, direction) => {
-    console.log("arrow was clicked", e.target.tagName)
     const newIndex = this.rotateIndex(this.state.selectedImgIndex, direction)
     const newImage = this.state.gallery
       .filter((img, index) => index === newIndex)
@@ -72,7 +69,7 @@ export default class Gallery extends Component {
 
   onEmptySpaceClick = target => {
     const tag = target.tagName.toLowerCase()
-    if (tag !== 'span' && tag !== 'img' && tag !== 'svg' && tag !== 'path'){
+    if (tag !== 'span' && tag !== 'svg' && tag !== 'path'){
       this.setState({ isSlideshow: false })
     }
   }
@@ -82,7 +79,7 @@ export default class Gallery extends Component {
       return (
         <img 
           key={index}
-          className={s.img} 
+          className='gallery-img' 
           src={img.fluid.src} 
           index={index}
           onClick={(e) => this.onImageClick(e.target.src, index)}
@@ -97,7 +94,7 @@ export default class Gallery extends Component {
     return (
       <>
       {this.state.isSlideshow? this.slideshow() : null }
-      <div className={s.container}>
+      <div className='gallery-container'>
         {this.renderImages()}
       </div>
       </>

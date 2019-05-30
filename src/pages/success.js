@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import Layout from '../components/layout'
 
 export default ({ data }) => {
   console.log("contact data", data)

@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { css } from 'linaria';
-import Layout from '../components/layout'
 
 const portrait = css`
   width: 90%;

@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { styled } from 'linaria/react'
-import Layout from '../components/layout'
 
 const Heading = styled.h3`
   maragin-bottom: 0;
