@@ -4,13 +4,15 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { styled } from 'linaria/react'
 import { FONTSIZE } from '../constants/constants'
 
-const Strapline = styled.div`
+const Strapline = styled.h1`
   color: white;
-  font-size: ${FONTSIZE.large};
   z-index:-2;
   width: 90%;
   cursor: pointer;
   text-align:center;
+  p {
+    font-size: ${FONTSIZE.large};
+  }
   @media only screen and (max-width: 786px) {
     width: 100%;
   }

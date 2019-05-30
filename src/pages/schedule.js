@@ -34,15 +34,11 @@ const PastEventContainer = styled.div`
   }
 `
 
-const Datetime = styled.div`
-  margin-bottom: 15px;
-  font-size: 24px;
-  color: ${POINT}
+const Datetime = styled.h3`
+  color: ${POINT};
 `
 
-const Subheading = styled.div`
-  font-size: 28px;
-  margin-bottom: 20px;
+const Subheading = styled.h1`
 `
 
 const ItemRow = styled.div`

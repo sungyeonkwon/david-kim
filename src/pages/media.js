@@ -4,7 +4,6 @@ import { styled } from 'linaria/react'
 
 const Heading = styled.h3`
   maragin-bottom: 0;
-  font-size:28px;
   border-top: 1px solid white;
   padding-top: 10px;
 `

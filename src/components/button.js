@@ -7,9 +7,12 @@ const btn = css`
   display: inline-block;
   font-size: 28px;
   font-family: "Cochin-Regular";
+  @media only screen and (max-width: 768px) {
+    font-size: 24px;
+  }
   `
 const div = css`
-  width: 150px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

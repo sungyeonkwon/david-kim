@@ -6,6 +6,11 @@ import { css } from 'linaria';
 const portrait = css`
   width: 90%;
   margin: 10px 0 40px 0;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    margin: 10px 0 20px 0;
+
+  }
 `
 
 export default ({ data }) => {

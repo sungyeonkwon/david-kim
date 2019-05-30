@@ -1,6 +1,7 @@
 import React from "react"
 import { styled } from 'linaria/react'
 import { css } from 'linaria';
+import { POINT } from "../constants/constants"
 
 const Row = styled.div`
   // background-color: pink;
@@ -11,9 +12,9 @@ const Row = styled.div`
   flex-wrap: nowrap;
   flex-direction: row;
 `
-const Subheading = styled.div`
-  font-size: 24px;
-  margin: 50px 0 20px 0;
+const Subheading = styled.h3`
+  margin: 50px 0 15px 0;
+  color: ${POINT};
 `
 
 const Number = styled.div`
@@ -49,7 +50,6 @@ export default () => {
         <audio className={audio} src={'01-brahms-speaking-and-playing.mp3'} controls/>
         </Title>
         <Download> 
-          <a href="" target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -60,7 +60,7 @@ export default () => {
         <audio className={audio} src={'02-romance-in-c-major.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'JoachimRomance.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -71,7 +71,7 @@ export default () => {
         <audio className={audio} src={'03-waltzes-op39-nos2-and-15.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'BrahmsWaltzesopus39.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -82,7 +82,7 @@ export default () => {
         <audio className={audio} src={'04-waltzes-op39-no15.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'BrahmsWaltzesopus39b.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -93,7 +93,7 @@ export default () => {
         <audio className={audio} src={'05-intermezzoiin-e-minor-op119n.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'Brahms119no2.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -104,7 +104,7 @@ export default () => {
         <audio className={audio} src={'06-capriccio-in-fsharp-minor-op76.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'BrahmsCapriccioOpus76.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -115,7 +115,7 @@ export default () => {
         <audio className={audio} src={'07-variation20.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'BrahmsVariationExample.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
 
@@ -130,7 +130,7 @@ export default () => {
         <audio className={audio} src={'08-davieskszenen2.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'SchumannKuriose.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -140,7 +140,7 @@ export default () => {
         <audio className={audio} src={'09-delarakszenen2-march1951.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'SchumannKuriose.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -150,7 +150,7 @@ export default () => {
         <audio className={audio} src={'10-davieskszenen4.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'SchumannBittendes.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -160,7 +160,7 @@ export default () => {
         <audio className={audio} src={'11-delarakszenen4-march1951.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'SchumannBittendes.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -170,7 +170,7 @@ export default () => {
         <audio className={audio} src={'12-davieskszenen5.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'SchumannGluckes.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -180,7 +180,7 @@ export default () => {
         <audio className={audio} src={'13-delarakszenen5-march1951.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'SchumannGluckes.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -190,7 +190,7 @@ export default () => {
         <audio className={audio} src={'14-davieskszenen11.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'SchumannFurchten.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -200,7 +200,7 @@ export default () => {
         <audio className={audio} src={'15-delarakszenen11-march1951.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'SchumannFurchten.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -210,7 +210,7 @@ export default () => {
         <audio className={audio} src={'16-davieskszenen10.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'SchumannFastzuErnst.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -220,7 +220,7 @@ export default () => {
         <audio className={audio} src={'17-delarakszenen10-march1951.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'SchumannFastzuErnst.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
 
@@ -236,7 +236,7 @@ export default () => {
         <audio className={audio} src={'18-die-mainacht.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'BrahmsCapriccio76-5.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -247,7 +247,7 @@ export default () => {
         <audio className={audio} src={'19-muss-es-eine-trennung-geben.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'BrahmsDieMainacht.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -258,7 +258,7 @@ export default () => {
         <audio className={audio} src={'20-minnelied.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'BrahmsMusseseineTrennunggebenOpus33.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -269,7 +269,7 @@ export default () => {
         <audio className={audio} src={'21-vergebliches-staendchen.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'BrahmsMinnelied.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -280,7 +280,7 @@ export default () => {
         <audio className={audio} src={'22-capriccio-in-c-sharp-minor-Op7.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'BrahmsVergeblichesStandchen.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -291,7 +291,7 @@ export default () => {
         <audio className={audio} src={'23-desir-op57-no1.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'ScriabinDesirOpus57.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -302,7 +302,7 @@ export default () => {
         <audio className={audio} src={'24-prelude-op11-no1.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'ScriabinPreludeOpus11.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -313,7 +313,7 @@ export default () => {
         <audio className={audio} src={'25-prelude-op11-no2.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'ScriabinPrelude11-2.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -324,7 +324,7 @@ export default () => {
         <audio className={audio} src={'26-rach-2ndconcerto-2ndtheme.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'Rachmaninoff2Concerto2ndtheme.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -335,7 +335,7 @@ export default () => {
         <audio className={audio} src={'27-rachmaninov-preludes-op23.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'RachmaninoffPreludeinGbmajor.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
       <Row>
@@ -346,7 +346,7 @@ export default () => {
         <audio className={audio} src={'28-rach-aminor-etude-tableauopening.mp3'} controls/>
         </Title>
         <Download>
-          <a href="" target="_blank">Download pdf of score</a>
+          <a href={'RachmaninoffEtudeTableauinAminor.pdf'} target="_blank">Download pdf of score</a>
         </Download>
       </Row>
     </>

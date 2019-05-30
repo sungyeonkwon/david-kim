@@ -1,3 +1,19 @@
+.clearfix:after {
+  content: " "; /* Older browser do not support empty content */
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+img, img::after, img::before {
+	-webkit-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-app-region: no-drag;
+	cursor: default;
+}
+
+
 form {
   transform: translateY(-15px);
 }
@@ -26,7 +42,7 @@ label {
   height: 100%;
   margin: 0 auto;
   max-width: 1200px;
-  padding: 40px 65px 70px 30px;
+  padding: 40px 65px 70px 0px;
 }
 
 .background {
@@ -60,7 +76,6 @@ label {
   margin: 0;
   padding: 40px;
   position: fixed;
-  /* width:100%; */
   height:100%;
   z-index:30;
   margin-top:40px;
@@ -84,6 +99,7 @@ label {
   box-sizing : border-box;
 }
 
+/* Cochin */
 @font-face {
   font-family: "Cochin-Regular";
   src: url("../../static/Cochin-Regular.woff") format("woff");
@@ -94,6 +110,40 @@ label {
   src: url("../../static/Cochin-Italic.woff") format("woff");
 }
 
+/* Walbaum */
+@font-face {
+  font-family: "Walbaum-Regular";
+  src: url("../../static/BertholdWalbaumBook-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Walbaum-Italic";
+  src: url("../../static/BertholdWalbaumBookItalics-Regular.woff") format("woff");
+}
+
+/* Sabon */
+@font-face {
+  font-family: "Sabon-Regular";
+  src: url("../../static/SabonMT-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Sabon-Italic";
+  src: url("../../static/SabonMTItalics-regular.woff") format("woff");
+}
+
+/* Perpetua */
+@font-face {
+  font-family: "Perpetua-Regular";
+  src: url("../../static/Perpetua.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Perpetua-Italic";
+  src: url("../../static/Perpetua-Italic.woff") format("woff");
+}
+
+
 html {
   background-color:#0d4142;
   color:white;
@@ -103,6 +153,9 @@ html {
 
 body {
   font-family: "Cochin-Regular";
+  /* font-family: "Walbaum-Regular"; */
+  /* font-family: "Sabon-Regular"; */
+  /* font-family: "Perpetua-Regular"; */
   width:100%;
   height:100%;
   margin: 0;
@@ -110,14 +163,18 @@ body {
   font-size:18px;
 }
 
+i,
+em {
+  font-family: "Cochin-Italic";
+  /* font-family: "Walbaum-Italic"; */
+  /* font-family: "Sabon-Italic"; */
+  /* font-family: "Perpetua-Italic"; */
+}
+
 p {
   margin-top: 0;
 }
 
-i,
-em {
-  font-family: "Cochin-Italic";
-}
 
 a, a:visited {
   text-decoration: none;
@@ -218,7 +275,8 @@ button {
 /** AUDIO **/
 audio {
   height:32px;
-  width: 400px;
+  width:100%;
+  max-width: 400px;
 }
 
 /** MENU ANIMATAION **/
@@ -233,11 +291,18 @@ audio {
 
 /** SLIDESHOW ANIMATION **/
 
-
 @media only screen and (max-width: 1185px) {
 
+  .list-item {
+    font-size:2em;
+  }
+
+  form {
+    transform: translateY(0px);
+  }
+
   .container {
-    padding: 40px 35px 60px 35px;
+    padding: 40px 40px 60px 0px;
   }
   
   .menu {
@@ -264,10 +329,6 @@ audio {
     align-items: center;
     z-index:40;
 
-  }
-
-  .list-item {
-    margin-left:15px;
   }
   
   .menu {
@@ -296,6 +357,7 @@ audio {
   .container {
     width: 100%;
     margin-top:50px;
+    padding: 30px 23px 60px 23px;
   }
 
   .logo-container {
@@ -308,23 +370,25 @@ audio {
   .hamburger {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    z-index:40;
-    width:20%;
-    font-size:22px;
-    cursor:pointer;
+    z-index: 40;
+    width: 20%;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: -1px;
+    padding-right: 23px;
   }
 
   .logo {
-    z-index:100;
-    display:inline-block;
+    z-index: 100;
+    display: inline-block;
     position: relative;
-    width:100%;
-    height:100%;
-    margin-left:35px;
-    margin-top:4px;
-    font-size:22px;
+    width: 100%;
+    height: 100%;
+    margin-left: 23px;
+    margin-top: -3px;
+    font-size: 20px;
   }
 
   .background {
@@ -403,25 +467,35 @@ audio {
 }
 
 .slide {
-  width: 80%;
+  width: 75%;
   height:90vh;
   object-fit: contain;
 }
 
 .prev {
-  width:30px;
-  height:20px;
+  width:100%;
+  height:100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .next {
-  width:30px;
-  height:20px;
+  width:100%;
+  height:100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 @media only screen and (max-width: 1200px) {
 
   .inner {
-    max-width: 90%;
+    max-width: 100%;
   }
   
   .gallery-container {
@@ -438,6 +512,28 @@ audio {
 }
 
 @media only screen and (max-width: 768px) {
+
+  h1 {
+    font-size:32px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 12px;
+  }
+
+  h3, label {
+    font-size:24px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
   .gallery-container {
     grid-template-columns: 40% 40%;
     grid-gap: 50px;
