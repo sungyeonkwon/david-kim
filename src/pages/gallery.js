@@ -91,9 +91,10 @@ export default class Gallery extends Component {
   }
 
   render() {
+    console.log("this.state.isSlideshow", this.state.isSlideshow)
     return (
       <>
-      {this.state.isSlideshow? this.slideshow() : null }
+      {this.state.isSlideshow? this.slideshow() : (<div className="slideshow hide"></div>) }
       <div className='gallery-container'>
         {this.renderImages()}
       </div>
