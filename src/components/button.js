@@ -18,7 +18,7 @@ const div = css`
   justify-content: center;
   flex-direction: row;
   flex-wrap: nowrap;
-  background: #642320;
+  background: #0d4142;
   color: white;
 `
 

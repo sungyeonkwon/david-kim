@@ -21,14 +21,7 @@ module.exports = {
         accessToken: `BRthMu_2OI-qjDau180hxFWGMaCSVMZFlar9bWFHa7Y`
       }
     },
-    'gatsby-plugin-linaria',
     `gatsby-transformer-remark`,
-    // `gatsby-plugin-emotion`,
-    // {
-    //   resolve: `gatsby-plugin-typography`,
-    //   options: {
-    //     pathToConfigModule: `src/utils/typography`,
-    //   },
-    // },
+    `gatsby-plugin-linaria`,
   ],
 }
