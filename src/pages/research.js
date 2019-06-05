@@ -4,7 +4,6 @@ import { css } from 'linaria';
 import { POINT } from "../constants/constants"
 
 const Row = styled.div`
-  // background-color: pink;
   border-top: 1px solid white;
   padding-top: 10px;
   width:100%;

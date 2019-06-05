@@ -33,7 +33,7 @@ const StraplineContainer = styled.div`
 export default ({ data }) => {
   const node = data.allContentfulHome.edges[0].node
   const strapline = node.strapline.json
-  const backgroundImage = node.background.file.url + '?w=1000'
+  const backgroundImage = node.background.file.url + '?w=1500'
   return(
     <>
       <div className="background-container">

@@ -16,6 +16,7 @@ const Item = styled.h3`
 export default ({ data }) => {
 
   const edges = data.allContentfulMedia.edges
+  const backgroundImage = edges[0].node.background.file.url + '?w=1500'
   const mediaItems = edges.map( edge => {
     const audios = edge.node.audios.map( obj => {
       return(
@@ -36,7 +37,10 @@ export default ({ data }) => {
   })
 
   return (
-    <>
+    <>      
+      <div className="background-container">
+        <img src = {backgroundImage} />
+      </div>
       {mediaItems}
     </>
   )
@@ -49,6 +53,14 @@ export const query = graphql`
         node {
           id
           title
+          background {
+            id
+            file {
+              url
+              fileName
+              contentType
+            }
+          }
           audios {
             id
             title

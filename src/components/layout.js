@@ -1,7 +1,7 @@
 import React, { Component}  from "react"
 import { Link } from "gatsby"
 // import { css } from 'linaria';
-// import { styled } from 'linaria/react'
+import { styled } from 'linaria/react'
 
 const ListLink = props => (
   <li className={props.cls}>
@@ -13,7 +13,7 @@ export default class Layout extends Component {
 
   state = {
     biography: ['list-item'], 
-    schedule: ['list-item'],
+    calendar: ['list-item'],
     media: ['list-item'],
     gallery: ['list-item'],
     research: ['list-item'],
@@ -44,7 +44,7 @@ export default class Layout extends Component {
 
   handleClick = e => {
 
-    const allPages = ['biography', 'schedule', 'media', 'gallery', 'research', 'contact']
+    const allPages = ['biography', 'calendar', 'media', 'gallery', 'research', 'contact']
 
     // Click on logo 
     if (e.target.className === 'logo'){
@@ -93,8 +93,11 @@ export default class Layout extends Component {
   }
 
   render() {
+    const pageName = this.props.children.key.replace(/\//g, '')
+    console.log('what', pageName)
+
     return(
-      <div className='wrapper'>
+      <div className={`wrapper ${pageName}`}>
         <div className="mobile-bar">
           <header className='header'>
             <span className='logo-container'>
@@ -111,7 +114,7 @@ export default class Layout extends Component {
               onClick={this.handleClick}
               className={this.state.mobileMenu.join(' ')}>
               <ListLink cls={this.state.biography.join(' ')} to="/biography/">Biography</ListLink>
-              <ListLink cls={this.state.schedule.join(' ')} to="/schedule/">Schedule</ListLink>
+              <ListLink cls={this.state.calendar.join(' ')} to="/calendar/">Calendar</ListLink>
               <ListLink cls={this.state.media.join(' ')} to="/media/">Media</ListLink>
               <ListLink cls={this.state.gallery.join(' ')} to="/gallery/">Gallery</ListLink>
               <ListLink cls={this.state.research.join(' ')} to="/research/">Research</ListLink>

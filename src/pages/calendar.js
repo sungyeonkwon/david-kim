@@ -90,7 +90,7 @@ export default ({ data }) => {
 
   return (
     <>
-      <h1>Upcoming</h1>
+      <h1>Concerts</h1>
       <UpcomingEventContainer>{upcomingEvents}</UpcomingEventContainer>
       <h1>Past</h1>
       <PastEventContainer>{pastEvents}</PastEventContainer>

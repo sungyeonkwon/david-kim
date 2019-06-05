@@ -1,6 +1,6 @@
-export const RED = 'red';
-export const BLUE = 'blue';
-export const ORANGE = '#789edb';
+export const PURPLE = '#542a45'; // darker
+export const BLUE = '#22305d'; // darker
+export const GREEN = '#0d4142';
 export const POINT = '#c6b785';
 export const FONTSIZE = {
   xlarge: '60px',
