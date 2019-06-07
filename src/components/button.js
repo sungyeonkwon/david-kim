@@ -1,5 +1,6 @@
 import React from "react"
 import { css } from 'linaria'
+import { styled } from 'linaria/react'
 import Arrow from './arrow'
 
 const btn = css` 
@@ -11,31 +12,35 @@ const btn = css`
     font-size: 24px;
   }
   `
-const div = css`
+const Btn = styled.span`
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   flex-wrap: nowrap;
-  background: #0d4142;
+  background: black;
+  // border-radius: 3px;
+  madgin-top:10px;
+  padding-left:10px;
   color: white;
+  cursor: pointer;
 `
 
 const inline = css`
   display: inline-block;
-  width: 50%;
+  // width: 50%;
 `
 export default ( props ) => {
   return (
-    <div className={div}>
-      <span className={inline}>
+    <Btn>
+      {/* <span className={inline}>
         <Arrow direction="right" />
-      </span>
+      </span> */}
       <span className={btn}>
         {props.children}
       </span>
-    </div>
+    </Btn>
    )
  }
  

@@ -8,14 +8,21 @@ const block = css`
   display: block;
 `
 
+const btn = css`
+  color:white;
+  font-family: "Cochin-Regular";
+  font-size:28px;
+  float: right;
+`
+
 const input = css`
   color:white;
-  width:30%;
+  width:60%;
   font-family: "Cochin-Regular";
   font-size:20px;
   background-color: red;
   border: none;
-  margin: 20px;
+  margin: 0 0 20px 20px;
   padding: 7px 15px;
   background-color: rgba(255,255,255,0.2);
   @media only screen and (max-width: 1185px) {
@@ -30,10 +37,11 @@ const Textarea = styled.textarea`
   font-size:20px;
   resize: none;
   padding: 7px 15px;
-  width: 90%;
+  width: 100%;
   height: 300px;
   background-color: rgba(255,255,255,0.2);
   border: none;
+  margin-bottom:10px;
   @media only screen and (max-width: 1185px) {
     width:100%;
   }
@@ -82,8 +90,10 @@ export default class Contact extends Component {
             ></Textarea>
           </label>
 
-          <button type="submit">
-            <Button type="submit">Submit</Button>
+          <button
+            className={btn} 
+            type="submit">
+            Send Email
           </button>
         </form>
       </>

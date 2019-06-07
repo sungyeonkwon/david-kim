@@ -62,16 +62,18 @@ export default ({ data }) => {
     const datetime = new Date(item.node.datetime)
     const text = item.node.schedule.json
     const year = datetime.getFullYear()
+    console.log("year", year)
     var yearTitle; 
 
     if (!yearCache.includes(year)){
       yearTitle = <Subheading>{year}</Subheading>
+      console.log("yearTitle", yearTitle)
       yearCache.push(year)
     }
     
     return (
       <>
-      { yearTitle ? <ItemRow>{yearTitle}</ItemRow> : null }
+      {/* { yearTitle ? <ItemRow>{yearTitle}</ItemRow> : null } */}
       <div>
         <Datetime>{formatDate(datetime)}</Datetime>
         <div className="type-xs event">{documentToReactComponents(text)}</div>
@@ -85,15 +87,19 @@ export default ({ data }) => {
     .map( item => renderEvent(item) )
 
   const pastEvents = items
+    .sort( (a, b) => parseInt(a.node.datetime) - parseInt(b.node.datetime)).reverse()
     .filter( item => !isFuture(item.node.datetime))
     .map( (item, i) => renderEvent(item, true, i) )
 
   return (
     <>
+      {/* <h1>Concerts</h1>
+      <UpcomingEventContainer>{upcomingEvents}</UpcomingEventContainer> */}
       <h1>Concerts</h1>
-      <UpcomingEventContainer>{upcomingEvents}</UpcomingEventContainer>
-      <h1>Past</h1>
-      <PastEventContainer>{pastEvents}</PastEventContainer>
+      
+      <PastEventContainer>
+        {/* <ItemRow><Subheading>2019</Subheading></ItemRow> */}
+      {pastEvents}</PastEventContainer>
     </>
   )
 

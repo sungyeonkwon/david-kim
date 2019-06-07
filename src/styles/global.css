@@ -144,7 +144,17 @@ img::before {
 }
 
 form {
-  transform: translateY(-15px);
+  /* transform: translateY(-15px); */
+  width:85%;
+}
+
+button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
 }
 
 .wrapper {
@@ -174,6 +184,19 @@ form {
   );
 }
 
+
+.wrapper.biography{
+  background-color: #0d4142;
+}
+
+.wrapper.calendar{
+  background-color: #412242;
+}
+
+.wrapper.media{
+  background-color: #0e3154;
+}
+
 .wrapper.gallery{
   background-color: #0d4142;
 }
@@ -198,6 +221,7 @@ form {
   width: 68%;
   height: 100%;
   margin: 0 auto;
+  min-height: 100vh;
   max-width: 1200px;
   padding: 40px 65px 70px 0px;
 }
@@ -416,6 +440,12 @@ audio {
   align-items: center;
 }
 
+
+
+label {
+  display: block;
+}
+
 @media only screen and (max-width: 1185px) {
   .gallery-container {
     grid-template-columns: 45% 45%;
@@ -429,6 +459,7 @@ audio {
 
   form {
     transform: translateY(0px);
+    width:100%;
   }
 
   .container {
@@ -449,6 +480,11 @@ audio {
 }
 
 @media only screen and (max-width: 786px) {
+
+  .wrapper {
+    background: transparent;
+  }
+  
   h1 {
     font-size: 32px;
   }
@@ -563,3 +599,4 @@ audio {
     top: 50px;
   }
 }
+
