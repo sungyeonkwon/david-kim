@@ -93,8 +93,7 @@ export default class Layout extends Component {
   }
 
   render() {
-    const pageName = this.props.children.key.replace(/\//g, '')
-    console.log('what', pageName)
+    const pageName = this.props.location.pathname.replace(/\//g, '')
 
     return(
       <div className={`wrapper ${pageName}`}>
