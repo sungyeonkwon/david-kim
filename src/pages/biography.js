@@ -6,6 +6,7 @@ import { css } from 'linaria';
 
 
 export default ({ data }) => {
+
   const intro = data.allContentfulBiography.edges[0].node.introtext.json
   const body = data.allContentfulBiography.edges[0].node.bodytext.json
   const backgroundImage = data.allContentfulBiography.edges[0].node.background.file.url + '?w=1500'
