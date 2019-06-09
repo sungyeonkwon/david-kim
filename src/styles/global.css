@@ -186,7 +186,7 @@ button {
 
 
 .wrapper.biography{
-  background-color: #0d4142;
+  /* background-color: #0d4142; */
 }
 
 .wrapper.calendar{
@@ -363,6 +363,7 @@ audio {
   margin-top: 15px;
   display: grid;
   grid-template-columns: 30% 30% 30%;
+  grid-template-rows: 300px;
   grid-column-gap: 3.333%;
   grid-row-gap: 50px;
   justify-content: space-between;
@@ -372,8 +373,10 @@ audio {
 
 .gallery-img {
   width: 100%;
-  max-height: 280px;
-  object-fit: contain;
+  height: 300px;
+  max-height: 300px;
+  /* object-fit: contain; */
+  object-fit: cover;
   filter: grayscale(90%);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -598,5 +601,16 @@ label {
     position: fixed;
     top: 50px;
   }
+
+  .gallery-container {
+    grid-template-rows: 200px;
+    grid-row-gap: 40px;
+  }
+
+
+  .gallery-img {
+    height: 200px;
+  }
+
 }
 
