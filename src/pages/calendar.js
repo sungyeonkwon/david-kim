@@ -86,10 +86,19 @@ export default ({ data }) => {
     .filter( item => isFuture(item.node.datetime))
     .map( item => renderEvent(item) )
 
+  console.log("checking in @@@", items)
+  items.forEach(v => {
+    console.log("v", v.node.datetime, "––––", new Date(v.node.datetime) )
+  })
+
   const pastEvents = items
-    .sort( (a, b) => parseInt(a.node.datetime) - parseInt(b.node.datetime)).reverse()
+    .sort( (a, b) => new Date(a.node.datetime) - new Date(b.node.datetime)).reverse()
     .filter( item => !isFuture(item.node.datetime))
     .map( (item, i) => renderEvent(item, true, i) )
+
+  
+  console.log("pastEvents consoling out", pastEvents)
+
 
   return (
     <>

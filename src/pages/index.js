@@ -10,8 +10,10 @@ const Strapline = styled.h1`
   width: 90%;
   cursor: pointer;
   text-align:center;
+  margin:0;
   p {
     font-size: ${FONTSIZE.large};
+    margin: 0;
   }
   @media only screen and (max-width: 786px) {
     width: 100%;
