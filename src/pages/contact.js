@@ -52,8 +52,12 @@ export default class Contact extends Component {
   }
 
   render() {
+    const backgroundImage = this.props.data.allContentfulContact.edges[0].node.background.file.url + '?w=1500'
     return (
       <>
+        <div className="background-container">
+          <img src = {backgroundImage} />
+        </div>
         <form 
           name="contact-form"
           method="POST"
@@ -107,6 +111,14 @@ export const query = graphql`
       edges {
         node {
           id
+          background {
+            id
+            file {
+              url
+              fileName
+              contentType
+            }
+          }
           bodytext {
             id
             json

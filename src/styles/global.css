@@ -190,11 +190,11 @@ button {
 }
 
 .wrapper.calendar{
-  background-color: #412242;
+  /* background-color: #412242; */
 }
 
 .wrapper.media{
-  background-color: #0e3154;
+  /* background-color: #0e3154; */
 }
 
 .wrapper.gallery{
@@ -206,7 +206,7 @@ button {
 }
 
 .wrapper.contact{
-  background-color: #0e3154;
+  /* background-color: #0e3154; */
 }
 
 .mobile-bar {
@@ -223,7 +223,7 @@ button {
   margin: 0 auto;
   min-height: 100vh;
   max-width: 1200px;
-  padding: 40px 65px 70px 0px;
+  padding: 40px 65px 60px 0px;
 }
 
 .background {
@@ -473,7 +473,7 @@ label {
   }
 
   .container {
-    padding: 40px 40px 60px 0px;
+    padding: 40px 40px 50px 0px;
   }
 
   .menu {
@@ -490,6 +490,14 @@ label {
 }
 
 @media only screen and (max-width: 786px) {
+
+  a:hover,
+  button:hover {
+    color: rgba(255, 255, 255, 1);
+    filter: blur(0px);
+    transition: all 0.3s ease-in-out;
+  }
+
 
   .wrapper {
     background: transparent;
@@ -559,7 +567,7 @@ label {
   .container {
     width: 100%;
     margin-top: 50px;
-    padding: 30px 23px 60px 23px;
+    padding: 30px 23px 50px 23px;
   }
 
   .logo-container {

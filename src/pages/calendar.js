@@ -62,12 +62,10 @@ export default ({ data }) => {
     const datetime = new Date(item.node.datetime)
     const text = item.node.schedule.json
     const year = datetime.getFullYear()
-    console.log("year", year)
     var yearTitle; 
 
     if (!yearCache.includes(year)){
       yearTitle = <Subheading>{year}</Subheading>
-      console.log("yearTitle", yearTitle)
       yearCache.push(year)
     }
     
@@ -86,22 +84,18 @@ export default ({ data }) => {
     .filter( item => isFuture(item.node.datetime))
     .map( item => renderEvent(item) )
 
-  console.log("checking in @@@", items)
-  items.forEach(v => {
-    console.log("v", v.node.datetime, "––––", new Date(v.node.datetime) )
-  })
-
   const pastEvents = items
     .sort( (a, b) => new Date(a.node.datetime) - new Date(b.node.datetime)).reverse()
     .filter( item => !isFuture(item.node.datetime))
     .map( (item, i) => renderEvent(item, true, i) )
 
-  
-  console.log("pastEvents consoling out", pastEvents)
-
+  const backgroundImage = data.allContentfulScheduleBackground.edges[0].node.background.file.url + '?w=1500'
 
   return (
     <>
+      <div className="background-container">
+        <img src = {backgroundImage} />
+      </div>
       {/* <h1>Concerts</h1>
       <UpcomingEventContainer>{upcomingEvents}</UpcomingEventContainer> */}
       <h1>Concerts</h1>
@@ -116,6 +110,21 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
+    allContentfulScheduleBackground{
+      edges {
+        node {
+          id
+          background {
+            id
+            file {
+              url
+              fileName
+              contentType
+            }
+          }
+        }
+      }
+    }
     allContentfulSchedule{
       edges {
         node {
