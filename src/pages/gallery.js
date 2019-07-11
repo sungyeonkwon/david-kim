@@ -12,6 +12,18 @@ export default class Gallery extends Component {
     selectedImgIndex: null,
   }
 
+  componentDidMount() {
+    // console.log("dud amount")
+    window.addEventListener('keydown', this.onKeyDown);
+  }
+
+  onKeyDown = e => {
+    if (e.keyCode === 27) {
+      this.setState({ isSlideshow: false })
+      return
+    }
+  }
+
   slideshow = () => {
     return (
       <div
