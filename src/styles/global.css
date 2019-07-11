@@ -11,29 +11,6 @@
   src: url("../../static/Cochin-Italic.woff") format("woff");
 }
 
-/* Walbaum */
-@font-face {
-  font-family: "Walbaum-Regular";
-  src: url("../../static/BertholdWalbaumBook-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Walbaum-Italic";
-  src: url("../../static/BertholdWalbaumBookItalics-Regular.woff")
-    format("woff");
-}
-
-/* Sabon */
-@font-face {
-  font-family: "Sabon-Regular";
-  src: url("../../static/SabonMT-regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Sabon-Italic";
-  src: url("../../static/SabonMTItalics-regular.woff") format("woff");
-}
-
 /* Perpetua */
 @font-face {
   font-family: "Perpetua-Regular";
@@ -45,16 +22,6 @@
   src: url("../../static/Perpetua-Italic.woff") format("woff");
 }
 
-/* Superclarendon */
-@font-face {
-  font-family: "Superclarendon-Regular";
-  src: url("../../static/Superclarendon-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Superclarendon-Italic";
-  src: url("../../static/Superclarendon-Italic.woff") format("woff");
-}
 
 html {
   /* background-color:#642320; */
@@ -72,11 +39,8 @@ html {
 }
 
 body {
-  font-family: "Cochin-Regular";
-  /* font-family: "Walbaum-Regular"; */
-  /* font-family: "Sabon-Regular"; */
-  /* font-family: "Perpetua-Regular"; */
-  /* font-family: "Superclarendon-Regular"; */
+  /* font-family: "Cochin-Regular"; */
+  font-family: "Perpetua-Regular";
   width: 100%;
   height: 100%;
   margin: 0;
@@ -86,11 +50,8 @@ body {
 
 i,
 em {
-  font-family: "Cochin-Italic";
-  /* font-family: "Walbaum-Italic"; */
-  /* font-family: "Sabon-Italic"; */
-  /* font-family: "Perpetua-Italic"; */
-  /* font-family: "Superclarendon-Italic"; */
+  /* font-family: "Cochin-Italic"; */
+  font-family: "Perpetua-Italic";
 }
 
 p {
@@ -165,22 +126,22 @@ button {
   background: -webkit-linear-gradient(
     90deg,
     rgba(0, 0, 0, 1) 0%,
-    rgb(0, 0, 0, 0) 55%
+    rgb(0, 0, 0, 0.1) 70%
   );
   background: -o-linear-gradient(
     90deg,
     rgba(0, 0, 0, 1) 0%,
-    rgb(0, 0, 0, 0) 55%
+    rgb(0, 0, 0, 0.1) 70%
   );
   background: -moz-linear-gradient(
     90deg,
     rgba(0, 0, 0, 1) 0%,
-    rgb(0, 0, 0, 0) 55%
+    rgb(0, 0, 0, 0.1) 70%
   );
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 1) 0%,
-    rgb(0, 0, 0, 0) 55%
+    rgb(0, 0, 0, 0.1) 70%
   );
 }
 
@@ -224,6 +185,7 @@ button {
   min-height: 100vh;
   max-width: 1200px;
   padding: 40px 65px 60px 0px;
+  /* z-index: 9; */
 }
 
 .background {

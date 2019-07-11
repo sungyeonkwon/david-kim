@@ -7,6 +7,8 @@ module.exports = {
     author: `David Hyun-Su Kim`,
   },
   plugins: [
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-linaria`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -21,7 +23,17 @@ module.exports = {
         accessToken: `BRthMu_2OI-qjDau180hxFWGMaCSVMZFlar9bWFHa7Y`
       }
     },
-    `gatsby-transformer-remark`,
-    `gatsby-plugin-linaria`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `David Hyun-Su Kim`,
+        short_name: `David Hyun-Su Kim`,
+        start_url: `/`,
+        background_color: `black`,
+        theme_color: `black`,
+        display: `standalone`,
+        icon: `src/icons/favicon.png`
+      },
+    },
   ],
 }

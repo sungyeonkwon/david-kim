@@ -5,12 +5,13 @@ import { styled } from 'linaria/react'
 import { FONTSIZE } from '../constants/constants'
 
 const Strapline = styled.h1`
-  color: white;
-  z-index:-2;
-  width: 90%;
+  color: #fff;
+  width: 60%;
   cursor: pointer;
-  text-align:center;
-  margin:0;
+  text-align: center;
+  margin: 0;
+  position: fixed;
+  z-index: 999;
   p {
     font-size: ${FONTSIZE.large};
     margin: 0;

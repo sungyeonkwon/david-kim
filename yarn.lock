@@ -4894,10 +4894,19 @@ gatsby-link@^2.1.1:
     "@types/reach__router" "^1.0.0"
     prop-types "^15.6.1"
 
-gatsby-plugin-linaria@^1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-linaria/-/gatsby-plugin-linaria-1.1.4.tgz#c1c7a4b087fe1212aa345ef60c04e14d9521d3a7"
-  integrity sha512-ICHjDn93DvPtKv1asQwOFy3qD9+ZnN3u6SGX/IgRheUeHQ//onGlBm/VZbO+Mn19urSWNlL6GXc9FMc3cLyOhA==
+gatsby-plugin-linaria@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-linaria/-/gatsby-plugin-linaria-1.2.0.tgz#b56cc6bf2929c3fb343612f5ba51b47e05c940d8"
+  integrity sha512-92vaDzcUzemQnD/WreDIyslJdFrOVnItGXgakUYgjklN5/8C9vYOj1qoNByro0PlBzcA6xSq27AKZJFJIrEeTg==
+
+gatsby-plugin-manifest@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.1.1.tgz#e987d6e655b1dcfba6e10d65ff20722aaeb75391"
+  integrity sha512-KUjuMUjfPRTkpTxKWopCJbhByHd/nHUIJ7GtwIPD8lR0RVX1U2MHqNGApRQyq5VLrOKZB/2L/LuyZQGnvKxlfQ==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    semver "^5.6.0"
+    sharp "^0.22.1"
 
 gatsby-plugin-page-creator@^2.0.13:
   version "2.0.13"
