@@ -106,7 +106,8 @@ img::before {
 
 form {
   /* transform: translateY(-15px); */
-  width:85%;
+  width:65%;
+  margin-left:20%;
 }
 
 button {
@@ -147,7 +148,7 @@ button {
 
 
 .wrapper.biography{
-  /* background-color: #0d4142; */
+  background-color: #0d4142;
 }
 
 .wrapper.calendar{
@@ -432,6 +433,7 @@ label {
   form {
     transform: translateY(0px);
     width:100%;
+    margin-left:0%;
   }
 
   .container {

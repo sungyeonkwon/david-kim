@@ -21,10 +21,10 @@ const input = css`
   font-family: "Cochin-Regular";
   font-size:20px;
   background-color: red;
-  border: none;
   margin: 0 0 20px 20px;
   padding: 7px 15px;
-  background-color: rgba(255,255,255,0.2);
+  border: none;
+  background-color: rgba(255,255,255,0.1);
   @media only screen and (max-width: 1185px) {
     width:100%;
     margin-left: 0px;
@@ -38,9 +38,9 @@ const Textarea = styled.textarea`
   resize: none;
   padding: 7px 15px;
   width: 100%;
-  height: 300px;
-  background-color: rgba(255,255,255,0.2);
   border: none;
+  height: 300px;
+  background-color: rgba(255,255,255,0.1);
   margin-bottom:10px;
   @media only screen and (max-width: 1185px) {
     width:100%;
@@ -59,6 +59,7 @@ export default class Contact extends Component {
           <img src = {backgroundImage} />
         </div>
         <form 
+          className="contact-form"
           name="contact-form"
           method="POST"
           action="/success"

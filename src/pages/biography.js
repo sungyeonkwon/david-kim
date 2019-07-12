@@ -3,7 +3,10 @@ import { graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { css } from 'linaria';
 
-
+const portrait = css`
+  width: 90%;
+  margin: 10px 0 40px 0;
+`
 
 export default ({ data }) => {
 
@@ -14,10 +17,14 @@ export default ({ data }) => {
 
   return (
     <>
-      <div className="background-container">
+      {/* <div className="background-container">
         <img src = {backgroundImage} />
-      </div>
+      </div> */}
       <div className="type-m">{documentToReactComponents(intro)}</div>
+      <img 
+        className={portrait}
+        src={img} 
+      />
       <div className="type-s">{documentToReactComponents(body)}</div>
    </>
   )
