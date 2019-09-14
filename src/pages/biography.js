@@ -17,14 +17,14 @@ export default ({ data }) => {
 
   return (
     <>
-      {/* <div className="background-container">
+      <div className="background-container">
         <img src = {backgroundImage} />
-      </div> */}
+      </div>
       <div className="type-m">{documentToReactComponents(intro)}</div>
-      <img 
+      {/* <img 
         className={portrait}
         src={img} 
-      />
+      /> */}
       <div className="type-s">{documentToReactComponents(body)}</div>
    </>
   )
