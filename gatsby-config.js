@@ -8,6 +8,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-transformer-remark`,
+    `gatsby-plugin-favicon`,
     `gatsby-plugin-linaria`,
     {
       resolve: `gatsby-source-filesystem`,

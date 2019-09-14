@@ -11,7 +11,7 @@ const Strapline = styled.h1`
   text-align: center;
   margin: 0;
   position: fixed;
-  z-index: 999;
+  z-index: 0;
   p {
     font-size: ${FONTSIZE.large};
     margin: 0;
