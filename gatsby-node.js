@@ -2,7 +2,7 @@ const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
-  console.log('sanity check node', node)
+  // console.log('sanity check node', node)
   // console.log('sanity check getNode', getNode)
   // console.log('sanity check actions', actions)
 
