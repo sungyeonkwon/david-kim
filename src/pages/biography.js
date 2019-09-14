@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { css } from 'linaria';
+// import { css } from 'linaria';
 
-const portrait = css`
-  width: 90%;
-  margin: 10px 0 40px 0;
-`
+// const portrait = css`
+//   width: 90%;
+//   margin: 10px 0 40px 0;
+// `
 
 export default ({ data }) => {
 
