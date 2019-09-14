@@ -293,16 +293,11 @@ label {
   font-size: 28px;
 }
 
-/** SCHEDULE **/
-.para-divider p {
-  border-top: 1px solid white;
-  padding: 20px 0;
-  display: block;
-  width: 100%;
-}
-.event p {
-  margin: 0;
-  padding: 0;
+/** CALENDAR **/
+.date{
+  margin: 0 0 12px 0;
+  color: #c6b785;
+  font-size: 22px;
 }
 
 /** INPUT **/
