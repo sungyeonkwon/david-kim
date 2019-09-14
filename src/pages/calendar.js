@@ -2,10 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import styles from "./calendar.module.css"
 
-const yearCache = []
-
 export default ({ data }) => {
-  console.log("styles", styles)
   
   const concerts = data.allContentfulCalendar.edges[0].node.concerts.childMarkdownRemark.html
   const backgroundImage = data.allContentfulCalendar.edges[0].node.background.file.url + '?w=1500'

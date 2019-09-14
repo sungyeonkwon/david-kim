@@ -1,5 +1,3 @@
-console.log("__dirname", __dirname)
-
 module.exports = {
   siteMetadata: {
     title: `David Hyun-Su Kim`,

@@ -13,7 +13,6 @@ export default class Gallery extends Component {
   }
 
   componentDidMount() {
-    // console.log("dud amount")
     window.addEventListener('keydown', this.onKeyDown);
   }
 

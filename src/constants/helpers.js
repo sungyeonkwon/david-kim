@@ -29,7 +29,5 @@ export const formatDate = date => {
 export const isFuture = t => {
   const today = new Date()
   const event = new Date(t)
-  // console.log("event", event)
-  // console.log("event > today", event > today)
   return event > today
 }
