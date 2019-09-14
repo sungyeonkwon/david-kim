@@ -38,10 +38,6 @@ export const query = graphql`
               contentType
             }
           }
-          bodytext {
-            id
-            json
-          }
           concerts {
             id
             childMarkdownRemark {
