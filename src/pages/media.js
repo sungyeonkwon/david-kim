@@ -19,9 +19,14 @@ export default ({ data }) => {
   const backgroundImage = edges[0].node.background.file.url + '?w=1500'
   const mediaItems = edges.map( edge => {
     const audios = edge.node.audios.map( obj => {
+
+      let i = obj.title.indexOf('opus')
+      const title = obj.title.slice(0, i)
+      const subtitle = obj.title.slice(i-1)
+
       return(
       <Item>
-        <Heading>{obj.title}</Heading>
+        <Heading>{title}<br/>{subtitle}</Heading>
         <p>{obj.description}</p>
         <audio key={obj.id} src={obj.file.url} controls/>
       </Item>
