@@ -13,7 +13,7 @@ export default ({ data }) => {
   const intro = data.allContentfulBiography.edges[0].node.introtext.json
   const body = data.allContentfulBiography.edges[0].node.bodytext.json
   const backgroundImage = data.allContentfulBiography.edges[0].node.background.file.url + '?w=1500'
-  const img = `${data.allContentfulBiography.edges[0].node.portrait.file.url}?w=1000`
+  // const img = `${data.allContentfulBiography.edges[0].node.portrait.file.url}?w=1000`
 
   return (
     <>
