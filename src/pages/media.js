@@ -20,7 +20,7 @@ export default ({ data }) => {
   const mediaItems = edges.map( edge => {
     const audios = edge.node.audios.map( obj => {
 
-      let i = obj.title.indexOf('opus')
+      let i = obj.title.toLowerCase().indexOf('opus')
       const title = obj.title.slice(0, i)
       const subtitle = obj.title.slice(i-1)
 

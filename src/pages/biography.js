@@ -10,7 +10,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 export default ({ data }) => {
 
-  const intro = data.allContentfulBiography.edges[0].node.introtext.json
+  // const intro = data.allContentfulBiography.edges[0].node.introtext.json || '';
   const body = data.allContentfulBiography.edges[0].node.bodytext.json
   const backgroundImage = data.allContentfulBiography.edges[0].node.background.file.url + '?w=1500'
   // const img = `${data.allContentfulBiography.edges[0].node.portrait.file.url}?w=1000`
@@ -20,7 +20,6 @@ export default ({ data }) => {
       <div className="background-container">
         <img src = {backgroundImage} />
       </div>
-      <div className="type-m">{documentToReactComponents(intro)}</div>
       {/* <img 
         className={portrait}
         src={img} 
@@ -49,10 +48,6 @@ export const query = graphql`
             file {
               url
             }
-          }
-          introtext {
-            id
-            json
           }
           bodytext {
             id
