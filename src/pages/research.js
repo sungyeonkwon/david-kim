@@ -232,7 +232,7 @@ export default () => {
         <Title>
         <AudioTitle>Vladimir de Pachmann performing Brahms Capriccio, opus 76, no. 5.</AudioTitle>
         <span className="des"><i>The Great Pianists</i>, vol. 1, Dal Segno</span>
-        <audio className={audio} src={'18-die-mainacht.mp3'} controls/>
+        <audio className={audio} src={'18-capriccio-in-c-sharp-minor-op7.mp3'} controls/>
         </Title>
         <Download>
           <a href={'BrahmsCapriccio76-5.pdf'} target="_blank">Download pdf of score</a>
@@ -243,7 +243,7 @@ export default () => {
         <Title>
         <AudioTitle>Sigrid Onegin singing Brahms Die Mainacht, opus 43, no. 2.</AudioTitle>
         <span className="des"><i>Johannes Brahms Lied-Edition</i>, vol. 8, ArkivCD</span>
-        <audio className={audio} src={'19-muss-es-eine-trennung-geben.mp3'} controls/>
+        <audio className={audio} src={'19-die-mainacht.mp3'} controls/>
         </Title>
         <Download>
           <a href={'BrahmsDieMainacht.pdf'} target="_blank">Download pdf of score</a>
@@ -254,7 +254,7 @@ export default () => {
         <Title>
         <AudioTitle>Julia Culp singing Brahms, Muß es eine Trennung geben, opus 33, no. 12.</AudioTitle>
         <span className="des"><i>Johannes Brahms Lied-Edition</i>, vol. 8, ArkivCD</span>
-        <audio className={audio} src={'20-minnelied.mp3'} controls/>
+        <audio className={audio} src={'20-muss-es-eine-trennung-geben.mp3'} controls/>
         </Title>
         <Download>
           <a href={'BrahmsMusseseineTrennunggebenOpus33.pdf'} target="_blank">Download pdf of score</a>
@@ -265,7 +265,7 @@ export default () => {
         <Title>
         <AudioTitle>Leopold Demuth singing Brahms Minnelied, opus 71, no. 5.</AudioTitle>
         <span className="des"><i>Johannes Brahms Lied-Edition</i>, vol. 8, ArkivCD</span>
-        <audio className={audio} src={'21-vergebliches-staendchen.mp3'} controls/>
+        <audio className={audio} src={'21-minnelied.mp3'} controls/>
         </Title>
         <Download>
           <a href={'BrahmsMinnelied.pdf'} target="_blank">Download pdf of score</a>
@@ -276,7 +276,7 @@ export default () => {
         <Title>
         <AudioTitle>Elena Gerhardt singing Brahms Vergebliches Ständchen, opus 43, no. 2.</AudioTitle>
         <span className="des"><i>Johannes Brahms Lied-Edition</i>, vol. 8, ArkivCD</span>
-        <audio className={audio} src={'22-capriccio-in-c-sharp-minor-Op7.mp3'} controls/>
+        <audio className={audio} src={'22-vergebliches-staendchen.mp3'} controls/>
         </Title>
         <Download>
           <a href={'BrahmsVergeblichesStandchen.pdf'} target="_blank">Download pdf of score</a>
