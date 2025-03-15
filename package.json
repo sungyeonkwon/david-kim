@@ -13,10 +13,10 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "sharp": "^0.27.0",
     "@contentful/rich-text-react-renderer": "^13.2.0",
     "gatsby": "^2.4.2",
     "gatsby-image": "^2.0.41",
-    "gatsby-plugin-favicon": "^3.1.6",
     "gatsby-plugin-linaria": "^1.2.0",
     "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-source-contentful": "^2.0.56",

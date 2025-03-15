@@ -6,7 +6,8 @@ module.exports = {
   },
   plugins: [
     `gatsby-transformer-remark`,
-    `gatsby-plugin-favicon`,
+    // `gatsby-plugin-image`,
+    // `gatsby-plugin-sharp`,
     `gatsby-plugin-linaria`,
     {
       resolve: `gatsby-source-filesystem`,
